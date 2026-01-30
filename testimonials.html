@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | JF Visa Consultancy</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/variables.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 6rem 0 3rem;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--color-accent);
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .client-name {
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--color-primary);
+        }
+
+        .visa-type {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                JF Visa <span>Consultancy</span>
+            </a>
+            <div class="nav-toggle"><i class="fa-solid fa-bars"></i></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="testimonials.html" class="nav-link active">Testimonials</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Success Stories</h1>
+            <p>Real stories from our happy clients</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="testimonials-grid">
+
+                <div class="review-card">
+                    <p>"I was rejected twice before coming to JS Visa Consultancy. Their team analyzed my profile, fixed
+                        the gaps, and I got my Malta study visa in just 3 weeks! Highly recommended."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">AH</div>
+                        <div>
+                            <h4>Ali Hassan</h4>
+                            <small class="text-accent">Malta Study Visa</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <p>"The interview preparation for my USA F1 visa was exceptional. They asked me the exact questions
+                        that the visa officer asked. I felt so confident. Thank you JS Visa!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar">SK</div>
+                        <div>
+                            <h4>Sana Khan</h4>
+                            <small class="text-accent">USA F1 Visa</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <p>"Professional and transparent. No hidden charges. They helped me get a freelance visa for Dubai,
+                        and now I'm working happily there."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">MR</div>
+                        <div>
+                            <h4>Muhammad Rizwan</h4>
+                            <small class="text-accent">Dubai Freelance Visa</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <p>"My Portugal PSW process offered by them was very smooth. The team is very knowledgeable about
+                        European immigration laws."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">FA</div>
+                        <div>
+                            <h4>Fatima Ahmed</h4>
+                            <small class="text-accent">Portugal PSW</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>JF Visa Consultancy</h3>
+                    <p>Where dreams become a reality! Your trusted partner for international mobility.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+923065870215" class="contact-phone"><i
+                                    class="fa-solid fa-phone text-accent"></i> +92 306 5870215</a></li>
+                        <li><a href="mailto:jfvisaconsultancy@gmail.com" class="contact-email"><i
+                                    class="fa-solid fa-envelope text-accent"></i> jfvisaconsultancy@gmail.com</a></li>
+                        <li><span class="contact-address"><i class="fa-solid fa-location-dot text-accent"></i> Office
+                                T-6, 3rd Floor, Rizwan Arcade Plaza, Saddar, Rawalpindi</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JF Visa Consultancy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/scripts/config.js"></script>
+    <script src="src/scripts/main.js"></script>
+</body>
+
+</html>

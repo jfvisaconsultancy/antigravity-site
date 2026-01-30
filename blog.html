@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News | JF Visa Consultancy</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/variables.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 6rem 0 3rem;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+        }
+
+        .blog-excerpt {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                JF Visa <span>Consultancy</span>
+            </a>
+            <div class="nav-toggle"><i class="fa-solid fa-bars"></i></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li> <!-- Added Blog Link -->
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Expert Insights</h1>
+            <p>Latest news, tips, and guides for your international journey</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container blog-grid">
+
+            <article class="blog-card">
+                <img src="src/assets/images/blog_study_abroad_tips_1769527208261.png" alt="Study Abroad Tips"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta"><i class="fa-regular fa-calendar"></i> Oct 12, 2025 | Study Visa</div>
+                    <h3 class="blog-title">5 Essential Tips for Pakistani Students Studying in Europe</h3>
+                    <p>Moving to a new country can be overwhelming. Here are the top 5 things you need to know before
+                        your flight...</p>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="src/assets/images/service_usa_visa_1769526245585.png" alt="USA Visa Guide" class="blog-img">
+                <!-- Reusing asset -->
+                <div class="blog-content">
+                    <div class="blog-meta"><i class="fa-regular fa-calendar"></i> Sep 28, 2025 | USA Visa</div>
+                    <h3 class="blog-title">How to Crack the F1 Visa Interview: A Complete Guide</h3>
+                    <p>The interview is the most critical part of your US application. Learn the DOs and DON'Ts from our
+                        experts...</p>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="src/assets/images/service_gcc_visa_1769526468980.png" alt="GCC Work Opportunities"
+                    class="blog-img"> <!-- Reusing asset -->
+                <div class="blog-content">
+                    <div class="blog-meta"><i class="fa-regular fa-calendar"></i> Sep 15, 2025 | Work Visa</div>
+                    <h3 class="blog-title">Top High-Demand Jobs in Saudi Arabia for 2026</h3>
+                    <p>Saudi Arabia's Vision 2030 is opening up new sectors. Discover which skills are in highest
+                        demand...</p>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>JF Visa Consultancy</h3>
+                    <p>Where dreams become a reality! Your trusted partner for international mobility.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+923065870215" class="contact-phone"><i
+                                    class="fa-solid fa-phone text-accent"></i> +92 306 5870215</a></li>
+                        <li><a href="mailto:jfvisaconsultancy@gmail.com" class="contact-email"><i
+                                    class="fa-solid fa-envelope text-accent"></i> jfvisaconsultancy@gmail.com</a></li>
+                        <li><span class="contact-address"><i class="fa-solid fa-location-dot text-accent"></i> Office
+                                T-6, 3rd Floor, Rizwan Arcade Plaza, Saddar, Rawalpindi</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JF Visa Consultancy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/scripts/config.js"></script>
+    <script src="src/scripts/main.js"></script>
+</body>
+
+</html>
