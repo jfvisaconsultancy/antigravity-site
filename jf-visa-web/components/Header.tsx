@@ -18,8 +18,12 @@ export default function Header() {
         <header className="header">
             <div className="container navbar">
                 <Link href="/" className="logo">
-                    <i className="fa-solid fa-plane-departure"></i>
-                    JF Visa <span>Consultancy</span>
+                    <img
+                        src="/images/logo.png"
+                        alt="JF Visa Consultancy"
+                        style={{ height: '60px', width: 'auto' }}
+                        className="logo-img"
+                    />
                 </Link>
 
                 <div className="nav-toggle" onClick={toggleMenu}>
