@@ -79,6 +79,15 @@ export default function Home() {
               description="Visit Visas for Australia and New Zealand. Clear pathways for tourism and family visits."
               linkHash="australia"
             />
+
+            {/* Travel Insurance */}
+            <ServiceCard
+              id="travel-insurance-card"
+              image="/images/service_travel_insurance.png"
+              title="Travel Insurance"
+              description="Travel with confidence. Comprehensive plans protecting you from medical emergencies, trip cancellations, and lost baggage."
+              linkHash="travel-insurance"
+            />
           </div>
         </div>
       </section>

@@ -32,6 +32,7 @@ export default function Header() {
                         <li><Link href="/about" className={`nav-link ${isActive('/about')}`} onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
                         <li><Link href="/services" className={`nav-link ${isActive('/services')}`} onClick={() => setIsMenuOpen(false)}>Services</Link></li>
                         <li><Link href="/process" className={`nav-link ${isActive('/process')}`} onClick={() => setIsMenuOpen(false)}>Process</Link></li>
+                        <li><Link href="/travel-insurance" className={`nav-link ${isActive('/travel-insurance')}`} onClick={() => setIsMenuOpen(false)}>Travel Insurance</Link></li>
                         <li><Link href="/contact" className={`nav-link ${isActive('/contact')}`} onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
                         <li><Link href="/contact" className="btn btn-primary" onClick={() => setIsMenuOpen(false)}>Apply Now</Link></li>
                     </ul>
