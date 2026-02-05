@@ -68,14 +68,18 @@ export default function ContactForm() {
                     <select
                         id="interest"
                         name="interest"
-                        className="w-full p-2 border border-[var(--color-border)] rounded font-body"
+                        required
+                        className="w-full p-2 border border-[var(--color-border)] rounded font-body bg-white"
                     >
-                        <option value="Canada Visit Visa">Canada Visit Visa</option>
-                        <option value="Australia/NZ Visit Visa">Australia/NZ Visit Visa</option>
-                        <option value="USA Visit Visa">USA Visit Visa</option>
-                        <option value="Europe Study Visa">Europe Study Visa</option>
-                        <option value="GCC Work Visa">GCC Work Visa</option>
-                        <option value="Other">Other</option>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="Visit Visa">Visit Visa</option>
+                        <option value="Study Visa">Study Visa</option>
+                        <option value="Work Visa">Work Visa</option>
+                        <option value="Umrah Visa">Umrah Visa</option>
+                        <option value="Immigration">Immigration</option>
+                        <option value="Travel Insurance">Travel Insurance</option>
+                        <option value="Qatar Azad / Freelance Visa">Qatar Azad / Freelance Visa</option>
+                        <option value="Life Insurance">Life Insurance</option>
                     </select>
                 </div>
 
