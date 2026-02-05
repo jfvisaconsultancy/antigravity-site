@@ -1,4 +1,5 @@
 import { CONFIG } from "@/lib/config";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
     return (
@@ -60,39 +61,7 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    <div className="contact-form bg-white p-8 rounded-lg shadow-md h-fit">
-                        <h3 className="text-primary text-xl font-bold mb-6">Send us a message</h3>
-                        <form>
-                            <div className="form-group mb-6">
-                                <label className="block mb-2 font-medium">Full Name</label>
-                                <input type="text" placeholder="John Doe" required className="w-full p-2 border border-[var(--color-border)] rounded font-body" />
-                            </div>
-                            <div className="form-group mb-6">
-                                <label className="block mb-2 font-medium">Email Address</label>
-                                <input type="email" placeholder="john@example.com" required className="w-full p-2 border border-[var(--color-border)] rounded font-body" />
-                            </div>
-                            <div className="form-group mb-6">
-                                <label className="block mb-2 font-medium">Phone Number</label>
-                                <input type="tel" placeholder="+92 306..." required className="w-full p-2 border border-[var(--color-border)] rounded font-body" />
-                            </div>
-                            <div className="form-group mb-6">
-                                <label className="block mb-2 font-medium">Interested In</label>
-                                <select className="w-full p-2 border border-[var(--color-border)] rounded font-body">
-                                    <option>Canada Visit Visa</option>
-                                    <option>Australia/NZ Visit Visa</option>
-                                    <option>USA Visit Visa</option>
-                                    <option>Europe Study Visa</option>
-                                    <option>GCC Work Visa</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div className="form-group mb-6">
-                                <label className="block mb-2 font-medium">Message</label>
-                                <textarea placeholder="Tell us about your requirements..." className="w-full p-2 border border-[var(--color-border)] rounded font-body min-h-[120px] resize-y"></textarea>
-                            </div>
-                            <button type="submit" className="btn btn-primary w-full">Send Message</button>
-                        </form>
-                    </div>
+                    <ContactForm />
 
                 </div>
             </section>
