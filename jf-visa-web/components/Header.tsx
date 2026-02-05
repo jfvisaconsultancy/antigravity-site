@@ -17,13 +17,14 @@ export default function Header() {
     return (
         <header className="header">
             <div className="container navbar">
-                <Link href="/" className="logo">
+                <Link href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <img
                         src="/images/logo.png"
                         alt="JF Visa Consultancy"
-                        style={{ height: '60px', width: 'auto' }}
+                        style={{ height: '50px', width: 'auto' }}
                         className="logo-img"
                     />
+                    <span className="logo-text" style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>JF Visa <span>Consultancy</span></span>
                 </Link>
 
                 <div className="nav-toggle" onClick={toggleMenu}>
