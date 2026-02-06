@@ -55,6 +55,11 @@ export async function sendEmail(prevState: any, formData: FormData) {
     try {
         // 1. Save to Database
         try {
+            // Check if DATABASE_URL is set (runtime check for better UX)
+            if (!process.env.DATABASE_URL) {
+                throw new Error("DATABASE_URL is not set in environment variables. If you are using Vercel, please add this variable in your Project Settings > Environment Variables.")
+            }
+
             await prisma.message.create({
                 data: {
                     fullName,
