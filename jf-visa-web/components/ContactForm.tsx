@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useState } from 'react'
 import { sendEmail } from '@/app/actions'
 import { SubmitButton } from './SubmitButton'
 
@@ -12,6 +12,18 @@ const initialState = {
 
 export default function ContactForm() {
     const [state, formAction] = useActionState(sendEmail, initialState)
+    const [selectedInterest, setSelectedInterest] = useState('')
+
+    const visaOptions = [
+        'Visit Visa',
+        'Study Visa',
+        'Work Visa',
+        'Umrah Visa',
+        'Immigration',
+        'Qatar Azad / Freelance Visa'
+    ]
+
+    const isVisaSelected = visaOptions.includes(selectedInterest)
 
     return (
         <div className="contact-form bg-white p-8 rounded-lg shadow-md h-fit">
@@ -69,9 +81,11 @@ export default function ContactForm() {
                         id="interest"
                         name="interest"
                         required
+                        value={selectedInterest}
+                        onChange={(e) => setSelectedInterest(e.target.value)}
                         className="w-full p-2 border border-[var(--color-border)] rounded font-body bg-white"
                     >
-                        <option value="" disabled selected>Select a service</option>
+                        <option value="" disabled>Select a service</option>
                         <option value="Visit Visa">Visit Visa</option>
                         <option value="Study Visa">Study Visa</option>
                         <option value="Work Visa">Work Visa</option>
@@ -82,6 +96,21 @@ export default function ContactForm() {
                         <option value="Life Insurance">Life Insurance</option>
                     </select>
                 </div>
+
+                {isVisaSelected && (
+                    <div className="form-group mb-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                        <label className="block mb-2 font-medium" htmlFor="country">Country of Interest</label>
+                        <input
+                            type="text"
+                            id="country"
+                            name="country"
+                            placeholder="Enter country name (e.g. Canada, UK, USA)"
+                            required={isVisaSelected}
+                            className="w-full p-2 border border-[var(--color-border)] rounded font-body"
+                        />
+                        {state?.errors?.country && <p className="text-red-500 text-sm mt-1">{state.errors.country}</p>}
+                    </div>
+                )}
 
                 <div className="form-group mb-6">
                     <label className="block mb-2 font-medium" htmlFor="message">Message</label>

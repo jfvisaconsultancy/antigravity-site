@@ -96,13 +96,14 @@ export default async function AdminMessagesPage({
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Interested In</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Country</th>
                                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Message</th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {messages.length === 0 ? (
                                     <tr>
-                                        <td colSpan={4} className="px-6 py-10 text-center text-gray-500">
+                                        <td colSpan={5} className="px-6 py-10 text-center text-gray-500">
                                             No messages found.
                                         </td>
                                     </tr>
@@ -122,6 +123,9 @@ export default async function AdminMessagesPage({
                                                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
                                                     {msg.interest}
                                                 </span>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                {msg.country || '-'}
                                             </td>
                                             <td className="px-6 py-4 text-sm text-gray-500 max-w-xs">
                                                 <p className="truncate" title={msg.message}>{msg.message}</p>
