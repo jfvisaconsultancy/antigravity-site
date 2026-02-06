@@ -3,7 +3,6 @@
 import { z } from 'zod'
 import nodemailer from 'nodemailer'
 import twilio from 'twilio'
-import prisma from '@/lib/prisma'
 
 const contactFormSchema = z.object({
     fullName: z.string().min(2, 'Name must be at least 2 characters'),
@@ -53,30 +52,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
     const { fullName, email, phone, interest, country, message } = validatedFields.data
 
     try {
-        // 1. Save to Database
-        try {
-            // Check if DATABASE_URL is set (runtime check for better UX)
-            if (!process.env.DATABASE_URL) {
-                throw new Error("DATABASE_URL is not set in environment variables. If you are using Vercel, please add this variable in your Project Settings > Environment Variables.")
-            }
-
-            await prisma.message.create({
-                data: {
-                    fullName,
-                    email,
-                    phone,
-                    interest,
-                    country: country || null,
-                    message,
-                },
-            })
-        } catch (dbError: any) {
-            console.error('Database Error:', dbError)
-            // If it's an env var issue, we'll see it here
-            throw new Error(`Database connection failed. Please check your configuration. (${dbError.message})`)
-        }
-
-        // 2. Send Email
+        // 1. Send Email
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
