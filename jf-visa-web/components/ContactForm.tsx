@@ -3,6 +3,7 @@
 import { useActionState, useState } from 'react'
 import { sendEmail } from '@/app/actions'
 import { SubmitButton } from './SubmitButton'
+import CountrySelect from './CountrySelect'
 
 const initialState = {
     success: false,
@@ -13,6 +14,7 @@ const initialState = {
 export default function ContactForm() {
     const [state, formAction] = useActionState(sendEmail, initialState)
     const [selectedInterest, setSelectedInterest] = useState('')
+    const [country, setCountry] = useState('')
 
     const visaOptions = [
         'Visit Visa',
@@ -36,6 +38,11 @@ export default function ContactForm() {
             )}
 
             <form action={formAction}>
+                {/* Honeypot Field for Spam Protection */}
+                <div style={{ display: 'none' }}>
+                    <input type="text" name="website_url" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <div className="form-group mb-6">
                     <label className="block mb-2 font-medium" htmlFor="fullName">Full Name</label>
                     <input
@@ -82,7 +89,12 @@ export default function ContactForm() {
                         name="interest"
                         required
                         value={selectedInterest}
-                        onChange={(e) => setSelectedInterest(e.target.value)}
+                        onChange={(e) => {
+                            setSelectedInterest(e.target.value)
+                            if (!visaOptions.includes(e.target.value)) {
+                                setCountry('')
+                            }
+                        }}
                         className="w-full p-2 border border-[var(--color-border)] rounded font-body bg-white"
                     >
                         <option value="" disabled>Select a service</option>
@@ -98,18 +110,11 @@ export default function ContactForm() {
                 </div>
 
                 {isVisaSelected && (
-                    <div className="form-group mb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-                        <label className="block mb-2 font-medium" htmlFor="country">Country of Interest</label>
-                        <input
-                            type="text"
-                            id="country"
-                            name="country"
-                            placeholder="Enter country name (e.g. Canada, UK, USA)"
-                            required={isVisaSelected}
-                            className="w-full p-2 border border-[var(--color-border)] rounded font-body"
-                        />
-                        {state?.errors?.country && <p className="text-red-500 text-sm mt-1">{state.errors.country}</p>}
-                    </div>
+                    <CountrySelect
+                        value={country}
+                        onChange={setCountry}
+                        error={state?.errors?.country?.[0]}
+                    />
                 )}
 
                 <div className="form-group mb-6">
@@ -118,6 +123,7 @@ export default function ContactForm() {
                         id="message"
                         name="message"
                         placeholder="Tell us about your requirements..."
+                        required
                         className="w-full p-2 border border-[var(--color-border)] rounded font-body min-h-[120px] resize-y"
                     ></textarea>
                     {state?.errors?.message && <p className="text-red-500 text-sm mt-1">{state.errors.message}</p>}

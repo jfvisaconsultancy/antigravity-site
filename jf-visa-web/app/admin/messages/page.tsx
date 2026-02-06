@@ -3,6 +3,7 @@ import { isAdminAuthenticated } from '../actions'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { adminLogout } from '../actions'
+import ExportButton from '@/components/ExportButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -26,6 +27,7 @@ export default async function AdminMessagesPage({
                         { fullName: { contains: q, mode: 'insensitive' } },
                         { email: { contains: q, mode: 'insensitive' } },
                         { message: { contains: q, mode: 'insensitive' } },
+                        { country: { contains: q, mode: 'insensitive' } },
                     ]
                 } : {},
                 interest ? { interest } : {}
@@ -53,6 +55,7 @@ export default async function AdminMessagesPage({
                 <div className="flex justify-between items-center mb-8">
                     <h1 className="text-3xl font-bold text-gray-900">Inquiry Log</h1>
                     <div className="flex gap-4">
+                        <ExportButton data={messages} />
                         <Link href="/" className="btn btn-outline text-gray-700 border-gray-300">Back to Site</Link>
                         <form action={adminLogout}>
                             <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#dc2626' }}>Logout</button>

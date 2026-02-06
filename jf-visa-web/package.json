@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma db push && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate"
@@ -19,9 +19,11 @@
     "prisma": "^5.19.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-select": "^5.10.2",
     "sass": "^1.97.3",
     "tailwindcss-animate": "^1.0.7",
     "twilio": "^5.12.1",
+    "xlsx": "^0.18.5",
     "zod": "^4.3.6"
   },
   "devDependencies": {
