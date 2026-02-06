@@ -53,6 +53,10 @@ export async function sendEmail(prevState: any, formData: FormData) {
 
     try {
         // 1. Send Email
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            throw new Error("Email credentials (EMAIL_USER or EMAIL_PASS) are not set in Vercel environment variables. Please add them in Project Settings.")
+        }
+
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
