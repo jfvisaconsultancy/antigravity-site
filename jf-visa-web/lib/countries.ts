@@ -22,6 +22,7 @@ export const countries: CountryOption[] = [
     { value: 'FI', label: 'Finland', flag: '🇫🇮', region: 'Europe' },
     { value: 'FR', label: 'France', flag: '🇫🇷', region: 'Europe' },
     { value: 'DE', label: 'Germany', flag: '🇩🇪', region: 'Europe' },
+    { value: 'GE', label: 'Georgia', flag: '🇬🇪', region: 'Europe' },
     { value: 'GR', label: 'Greece', flag: '🇬🇷', region: 'Europe' },
     { value: 'HU', label: 'Hungary', flag: '🇭🇺', region: 'Europe' },
     { value: 'IS', label: 'Iceland', flag: '🇮🇸', region: 'Europe' },

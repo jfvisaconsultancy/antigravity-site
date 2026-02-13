@@ -36,12 +36,13 @@ export default function Header() {
                 <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <ul className="nav-menu" style={{ flexDirection: isMenuOpen ? 'column' : 'row' }}>
                         <li><Link href="/" className={`nav-link ${isActive('/')}`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+                        <li><Link href="/study-visa" className={`nav-link ${isActive('/study-visa')}`} onClick={() => setIsMenuOpen(false)}>Study Visa</Link></li>
+                        <li><Link href="/visit-visa" className={`nav-link ${isActive('/visit-visa')}`} onClick={() => setIsMenuOpen(false)}>Visit Visa</Link></li>
+                        <li><Link href="/work-permit" className={`nav-link ${isActive('/work-permit')}`} onClick={() => setIsMenuOpen(false)}>Work Permit</Link></li>
+                        <li><Link href="/immigration" className={`nav-link ${isActive('/immigration')}`} onClick={() => setIsMenuOpen(false)}>Immigration</Link></li>
+                        <li><Link href="/testimonials" className={`nav-link ${isActive('/testimonials')}`} onClick={() => setIsMenuOpen(false)}>Success Stories</Link></li>
                         <li><Link href="/about" className={`nav-link ${isActive('/about')}`} onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-                        <li><Link href="/services" className={`nav-link ${isActive('/services')}`} onClick={() => setIsMenuOpen(false)}>Services</Link></li>
-                        <li><Link href="/process" className={`nav-link ${isActive('/process')}`} onClick={() => setIsMenuOpen(false)}>Process</Link></li>
-                        <li><Link href="/travel-insurance" className={`nav-link ${isActive('/travel-insurance')}`} onClick={() => setIsMenuOpen(false)}>Travel Insurance</Link></li>
                         <li><Link href="/contact" className={`nav-link ${isActive('/contact')}`} onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-                        <li><Link href="/contact" className="btn btn-primary" onClick={() => setIsMenuOpen(false)}>Apply Now</Link></li>
                     </ul>
                 </nav>
             </div>

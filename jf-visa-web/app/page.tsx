@@ -2,6 +2,7 @@ import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
 import { CONFIG } from "@/lib/config";
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -200,7 +201,7 @@ export default function Home() {
           <div className="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-[var(--color-accent)]">
             <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-4">Visa Refused? We Can Help.</h2>
             <p className="text-xl text-[var(--color-text-dark)] mb-8">
-              We analyze refusal reasons and rebuild your case professionally for re-application.
+              Rebuild cases professionally for re-application
             </p>
             <div className="flex justify-center gap-4">
               <Link href="/contact" className="btn btn-primary">
@@ -248,24 +249,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. Final CTA */}
-      <section className="py-20 bg-[var(--color-primary)] text-white text-center relative overflow-hidden">
-        {/* Background decorative elements could go here */}
-        <div className="container relative z-10">
-          <h2 className="text-4xl font-bold mb-6 text-white">Ready to Start Your Visa Process?</h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-            Get a free assessment today and know your chances within minutes.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Link href="/contact" className="btn btn-primary text-lg px-10">
-              Get Free Assessment
-            </Link>
-            <a
-              href={`https://wa.me/${CONFIG.whatsapp}`}
-              className="btn btn-outline border-2 text-lg px-10 flex items-center justify-center gap-2 hover:bg-white hover:text-primary"
-            >
-              <i className="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-            </a>
+      {/* 9. Final CTA & Contact Form */}
+      <section className="py-20 bg-[var(--color-primary)] text-white relative">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h2 className="text-4xl font-bold mb-6 text-white">Ready to Start Your Visa Process?</h2>
+              <p className="text-xl mb-10 opacity-90">
+                Get a free assessment today and know your chances within minutes. Don't risk a refusal.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <a
+                  href={`https://wa.me/${CONFIG.whatsapp}`}
+                  className="btn btn-outline border-2 text-lg px-10 flex items-center justify-center gap-2 hover:bg-white hover:text-primary"
+                >
+                  <i className="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+            <div>
+              <ContactForm title="Get Free Assessment" />
+            </div>
           </div>
         </div>
       </section>

@@ -11,7 +11,7 @@ const initialState = {
     errors: {},
 }
 
-export default function ContactForm() {
+export default function ContactForm({ title = "Send us a message" }: { title?: string }) {
     const [state, formAction] = useActionState(sendEmail, initialState)
     const [selectedInterest, setSelectedInterest] = useState('')
     const [country, setCountry] = useState('')
@@ -29,7 +29,7 @@ export default function ContactForm() {
 
     return (
         <div className="contact-form bg-white p-8 rounded-lg shadow-md h-fit">
-            <h3 className="text-primary text-xl font-bold mb-6">Send us a message</h3>
+            <h3 className="text-primary text-xl font-bold mb-6">{title}</h3>
 
             {state?.message && (
                 <div className={`p-4 mb-6 rounded ${state.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
