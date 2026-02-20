@@ -224,7 +224,7 @@ export default function TravelInsuranceForm() {
                                     { id: 'Multi-Trip', label: 'Multi-Trip', icon: 'fa-rotate' },
                                     { id: 'Long Stay', label: 'Long Stay', icon: 'fa-house-user' }
                                 ].map((type) => (
-                                    <label key={type.id} className={`cursor-pointer border-2 p-4 rounded-xl text-center text-sm transition-all flex flex-col items-center gap-2 ${planType === type.id ? 'bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-md' : 'bg-white border-gray-200 hover:border-[var(--color-accent)] hover:bg-gray-50'}`}>
+                                    <label key={type.id} className={`selection-card ${planType === type.id ? 'active' : ''}`}>
                                         <input
                                             type="radio"
                                             name="planType"
@@ -233,8 +233,11 @@ export default function TravelInsuranceForm() {
                                             onChange={() => setPlanType(type.id)}
                                             className="hidden"
                                         />
-                                        <i className={`fa-solid ${type.icon} text-lg`}></i>
-                                        <span className="font-bold">{type.label}</span>
+                                        <div className="active-indicator">
+                                            <i className="fa-solid fa-check"></i>
+                                        </div>
+                                        <i className={`fa-solid ${type.icon} text-lg ${planType === type.id ? 'text-[var(--color-primary)]' : 'text-gray-400'}`}></i>
+                                        <span className={`font-bold ${planType === type.id ? 'text-[var(--color-primary)]' : 'text-slate-700'}`}>{type.label}</span>
                                     </label>
                                 ))}
                             </div>
@@ -251,7 +254,7 @@ export default function TravelInsuranceForm() {
                                     { val: '50000', label: '€50,000', badge: 'Popular' },
                                     { val: '100000', label: '€100,000', badge: 'Premium' }
                                 ].map((opt) => (
-                                    <label key={opt.val} className={`relative cursor-pointer border-2 p-5 rounded-xl text-center transition-all ${coverage === opt.val ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)] shadow-md' : 'bg-white border-gray-200 hover:bg-gray-50'}`}>
+                                    <label key={opt.val} className={`selection-card ${coverage === opt.val ? 'active' : ''}`}>
                                         <input
                                             type="radio"
                                             name="coverageAmount"
@@ -260,11 +263,14 @@ export default function TravelInsuranceForm() {
                                             onChange={() => setCoverage(opt.val)}
                                             className="hidden"
                                         />
+                                        <div className="active-indicator">
+                                            <i className="fa-solid fa-check"></i>
+                                        </div>
                                         {opt.badge === 'Popular' && (
-                                            <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">RECOMMENDED</span>
+                                            <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] px-2 py-0.5 rounded-full font-bold z-10">RECOMMENDED</span>
                                         )}
-                                        <div className="text-xl font-black">{opt.label}</div>
-                                        <div className={`text-[10px] font-bold ${coverage === opt.val ? 'text-white/80' : 'text-gray-400'}`}>{opt.badge}</div>
+                                        <div className={`text-xl font-black ${coverage === opt.val ? 'text-[var(--color-primary)]' : 'text-slate-800'}`}>{opt.label}</div>
+                                        <div className={`text-[10px] font-bold ${coverage === opt.val ? 'text-[var(--color-primary)]/60' : 'text-gray-400'}`}>{opt.badge}</div>
                                     </label>
                                 ))}
                             </div>

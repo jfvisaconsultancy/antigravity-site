@@ -13,6 +13,8 @@
     --color-placeholder: #6b7280;
     --color-input-bg: #f8f9fa;
     --color-border: #e2e8f0;
+    --color-accent-tint: rgba(196, 155, 70, 0.1);
+    --color-primary-tint: rgba(10, 25, 47, 0.05);
 
     /* Typography */
     --font-heading: 'Playfair Display', serif;

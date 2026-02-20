@@ -313,6 +313,66 @@ select option {
     background: white;
 }
 
+/* Selection Cards (for Radio/Checkbox blocks) */
+.selection-card {
+    cursor: pointer;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    color: var(--color-text-dark);
+}
+
+.selection-card:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-off-white);
+}
+
+.selection-card.active {
+    border-color: var(--color-primary);
+    background-color: var(--color-accent-tint);
+    box-shadow: var(--shadow-md);
+}
+
+.selection-card.active .font-bold {
+    color: var(--color-primary);
+}
+
+.selection-card .active-indicator {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+}
+
+.selection-card.active .active-indicator {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.selection-card:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(10, 25, 47, 0.1);
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .about-grid {
