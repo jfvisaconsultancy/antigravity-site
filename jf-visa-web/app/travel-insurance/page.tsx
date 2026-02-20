@@ -96,6 +96,146 @@ export default function TravelInsurancePage() {
                 </div>
             </section>
 
+            {/* Browse by Purpose Section (Phase 1 & 2) */}
+            <section className="py-16 bg-white border-b">
+                <div className="container">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-black text-[var(--color-primary)] mb-4">INSURANCE BY PURPOSE</h2>
+                        <p className="text-gray-600">Select your visa category to see specific insurance requirements.</p>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        {[
+                            { name: "Schengen Visa", path: "/travel-insurance/schengen-visa", icon: "fa-eu" },
+                            { name: "Study Visa", path: "/travel-insurance/study-visa", icon: "fa-graduation-cap" },
+                            { name: "Visit Visa", path: "/travel-insurance/visit-visa", icon: "fa-passport" },
+                            { name: "Work Permit", path: "/travel-insurance/work-permit", icon: "fa-briefcase" },
+                            { name: "Immigration", path: "/travel-insurance/immigration", icon: "fa-house-chimney-user" }
+                        ].map((item, idx) => (
+                            <Link key={idx} href={item.path} className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl border hover:border-[var(--color-primary)] hover:shadow-lg transition-all text-center group">
+                                <i className={`fa-solid ${item.icon} text-3xl text-[var(--color-accent)] mb-4 group-hover:scale-110 transition-transform`}></i>
+                                <span className="font-bold text-[var(--color-primary)]">{item.name}</span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Embassy Insurance Requirements (Phase 4) */}
+            <section className="py-16 bg-[var(--color-primary)] text-white">
+                <div className="container">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl font-black mb-8 text-center text-[var(--color-accent)] italic uppercase">Embassy Insurance Requirements</h2>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-2">Minimum Coverage Amount</h4>
+                                        <p className="opacity-80">Most embassies (especially Schengen) require a minimum medical coverage of €30,000 (roughly $34,000 USD).</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-2">Valid for Entire Stay</h4>
+                                        <p className="opacity-80">The policy must cover the exact duration of your travel from the day of departure to the day of return.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-2">Repatriation Coverage</h4>
+                                        <p className="opacity-80">Mandatory coverage for emergency medical evacuation and repatriation of remains to the home country.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-2">Zero Deductible Preferred</h4>
+                                        <p className="opacity-80">Embassies prefer policies where the applicant doesn't have to pay a deductible (excess) for medical claims.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing Psychology Block (Phase 5) */}
+            <section className="py-16 bg-white">
+                <div className="container">
+                    <div className="bg-gray-50 rounded-[3rem] p-8 md:p-12 border border-gray-100 shadow-sm overflow-hidden relative">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent)] opacity-5 rounded-bl-full pointer-events-none"></div>
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 className="text-3xl font-black text-[var(--color-primary)] mb-6 uppercase tracking-tight">AFFORDABLE PROTECTION FOR EVERY TRAVELER</h2>
+                                <div className="space-y-6">
+                                    <div className="flex items-center gap-4">
+                                        <i className="fa-solid fa-bolt text-[var(--color-accent)] text-2xl"></i>
+                                        <div>
+                                            <h4 className="font-bold">Starting from low daily rates</h4>
+                                            <p className="text-gray-600">Get covered for as low as the price of a coffee per day. Price depends on age and duration.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <i className="fa-solid fa-chart-line text-[var(--color-accent)] text-2xl"></i>
+                                        <div>
+                                            <h4 className="font-bold">Age-Based Dynamic Pricing</h4>
+                                            <p className="text-gray-600">Fair pricing models based on traveler age groups. Infants and Seniors have specialized plans.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <i className="fa-solid fa-crown text-[var(--color-accent)] text-2xl"></i>
+                                        <div>
+                                            <h4 className="font-bold">Recommended vs Minimum</h4>
+                                            <p className="text-gray-600">While €30k is the minimum, 85% of our successful applicants choose the €50,000 plan for extra safety.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-[var(--color-primary)] p-8 rounded-3xl text-white text-center shadow-2xl scale-105">
+                                <h3 className="text-2xl font-bold mb-4">QUICK PRICE CHECK</h3>
+                                <div className="text-5xl font-black text-[var(--color-accent)] mb-2 tracking-tighter">Starting low</div>
+                                <p className="opacity-70 mb-8 uppercase text-xs font-bold tracking-widest">Affordable Daily Rates</p>
+                                <ul className="text-left space-y-3 mb-8 text-sm">
+                                    <li className="flex justify-between border-b border-white/10 pb-2"><span>Schengen (15 Days)</span> <span className="font-bold">Very Low Cost</span></li>
+                                    <li className="flex justify-between border-b border-white/10 pb-2"><span>USA / Canada (30 Days)</span> <span className="font-bold">Competitive</span></li>
+                                    <li className="flex justify-between pb-2"><span>Worldwide (1 Year)</span> <span className="font-bold">Best Value</span></li>
+                                </ul>
+                                <a href="#apply-form" className="btn btn-primary w-full py-4 rounded-xl font-black">GET MY EXACT PRICE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Browse by Country Section (Phase 1 & 3) */}
+            <section className="py-16 bg-gray-50">
+                <div className="container">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-black text-[var(--color-primary)] mb-4 uppercase italic">TOP DESTINATIONS</h2>
+                        <p className="text-gray-600 text-lg">Specific insurance guides for the most popular travel destinations from Pakistan.</p>
+                    </div>
+                    <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
+                        {[
+                            { name: "Germany", path: "/travel-insurance/germany", img: "https://flagcdn.com/w160/de.png" },
+                            { name: "Italy", path: "/travel-insurance/italy", img: "https://flagcdn.com/w160/it.png" },
+                            { name: "Poland", path: "/travel-insurance/poland", img: "https://flagcdn.com/w160/pl.png" },
+                            { name: "UAE", path: "/travel-insurance/uae", img: "https://flagcdn.com/w160/ae.png" },
+                            { name: "United Kingdom", path: "/travel-insurance/uk", img: "https://flagcdn.com/w160/gb.png" }
+                        ].map((country, idx) => (
+                            <Link key={idx} href={country.path} className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all text-center">
+                                <img src={country.img} alt={country.name} className="w-16 h-auto mx-auto mb-4 rounded shadow-sm grayscale group-hover:grayscale-0 transition-all" />
+                                <h3 className="font-bold text-[var(--color-primary)]">{country.name}</h3>
+                                <span className="text-xs text-[var(--color-accent)] font-bold mt-2 inline-block opacity-0 group-hover:opacity-100 transition-opacity">REQS & PRICING</span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Trust & Authority Section */}
             <section className="py-12 bg-white border-b overflow-hidden">
                 <div className="container">

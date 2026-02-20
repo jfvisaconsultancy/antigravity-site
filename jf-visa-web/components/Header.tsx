@@ -38,6 +38,7 @@ export default function Header() {
                         <li><Link href="/" className={`nav-link ${isActive('/')}`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
                         <li><Link href="/study-visa" className={`nav-link ${isActive('/study-visa')}`} onClick={() => setIsMenuOpen(false)}>Study Visa</Link></li>
                         <li><Link href="/visit-visa" className={`nav-link ${isActive('/visit-visa')}`} onClick={() => setIsMenuOpen(false)}>Visit Visa</Link></li>
+                        <li><Link href="/travel-insurance" className={`nav-link ${isActive('/travel-insurance')}`} onClick={() => setIsMenuOpen(false)}>Insurance</Link></li>
                         <li><Link href="/work-permit" className={`nav-link ${isActive('/work-permit')}`} onClick={() => setIsMenuOpen(false)}>Work Permit</Link></li>
                         <li><Link href="/immigration" className={`nav-link ${isActive('/immigration')}`} onClick={() => setIsMenuOpen(false)}>Immigration</Link></li>
                         <li><Link href="/testimonials" className={`nav-link ${isActive('/testimonials')}`} onClick={() => setIsMenuOpen(false)}>Success Stories</Link></li>
