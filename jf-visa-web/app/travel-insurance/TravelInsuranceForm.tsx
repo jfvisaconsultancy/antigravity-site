@@ -104,30 +104,30 @@ export default function TravelInsuranceForm() {
                         <div className="grid md:grid-cols-2 gap-x-6 gap-y-4">
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Full Name</label>
-                                <input name="fullName" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all min-h-[44px]" placeholder="As on Passport" />
+                                <input name="fullName" type="text" required className="form-input" placeholder="As on Passport" />
                                 {state?.errors?.fullName && <p className="text-red-500 text-xs mt-1">{state.errors.fullName}</p>}
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Date of Birth</label>
-                                <input name="dob" type="date" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" />
+                                <input name="dob" type="date" required className="form-input" />
                                 {state?.errors?.dob && <p className="text-red-500 text-xs mt-1">{state.errors.dob}</p>}
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Passport Number</label>
-                                <input name="passportNumber" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="Enter Passport No." />
+                                <input name="passportNumber" type="text" required className="form-input" placeholder="Enter Passport No." />
                                 {state?.errors?.passportNumber && <p className="text-red-500 text-xs mt-1">{state.errors.passportNumber}</p>}
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Nationality</label>
-                                <input name="nationality" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="e.g. Pakistani" />
+                                <input name="nationality" type="text" required className="form-input" placeholder="e.g. Pakistani" />
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Phone (WhatsApp)</label>
-                                <input name="phone" type="tel" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="+92 3XX XXXXXXX" />
+                                <input name="phone" type="tel" required className="form-input" placeholder="+92 3XX XXXXXXX" />
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Email</label>
-                                <input name="email" type="email" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="yourname@email.com" />
+                                <input name="email" type="email" required className="form-input" placeholder="yourname@email.com" />
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@ export default function TravelInsuranceForm() {
                                         list="countries-list"
                                         type="text"
                                         required
-                                        className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]"
+                                        className="form-input"
                                         placeholder="Search countries..."
                                         value={destination}
                                         onChange={(e) => setDestination(e.target.value)}
@@ -162,7 +162,7 @@ export default function TravelInsuranceForm() {
                                 <select
                                     name="visaType"
                                     required
-                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all bg-white min-h-[44px]"
+                                    className="form-select"
                                     value={visaType}
                                     onChange={(e) => setVisaType(e.target.value)}
                                 >
@@ -180,7 +180,7 @@ export default function TravelInsuranceForm() {
                                     name="startDate"
                                     type="date"
                                     required
-                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]"
+                                    className="form-input"
                                     value={startDate}
                                     onChange={(e) => setStartDate(e.target.value)}
                                 />
@@ -191,7 +191,7 @@ export default function TravelInsuranceForm() {
                                     name="endDate"
                                     type="date"
                                     required
-                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]"
+                                    className="form-input"
                                     value={endDate}
                                     onChange={(e) => setEndDate(e.target.value)}
                                 />
@@ -274,11 +274,11 @@ export default function TravelInsuranceForm() {
                         <div className="grid md:grid-cols-2 gap-x-6 gap-y-4 pt-2">
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Number of Travelers</label>
-                                <input name="travelersCount" type="number" min="1" defaultValue="1" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] min-h-[44px]" />
+                                <input name="travelersCount" type="number" min="1" defaultValue="1" className="form-input" />
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Age of Traveler(s)</label>
-                                <input name="travelersAges" type="text" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] min-h-[44px]" placeholder="e.g. 25, 30, 5" />
+                                <input name="travelersAges" type="text" className="form-input" placeholder="e.g. 25, 30, 5" />
                                 <p className="text-[10px] text-gray-500">Separated by commas if multiple</p>
                             </div>
                         </div>
@@ -287,14 +287,14 @@ export default function TravelInsuranceForm() {
                         {planType === 'Student' && (
                             <div className="p-5 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
                                 <label className="block text-sm font-bold mb-2">University / College Name</label>
-                                <input name="universityName" type="text" className="w-full p-3 border border-gray-200 rounded-lg min-h-[44px]" placeholder="Enter institution name" />
+                                <input name="universityName" type="text" className="form-input" placeholder="Enter institution name" />
                             </div>
                         )}
 
                         {planType === 'Multi-Trip' && (
                             <div className="p-5 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
                                 <label className="block text-sm font-bold mb-2">Trip Frequency</label>
-                                <select name="multiTripFreq" className="w-full p-3 border border-gray-200 rounded-lg bg-white min-h-[44px]">
+                                <select name="multiTripFreq" className="form-select">
                                     <option value="30 Days per trip">30 Days max per trip (Annual Policy)</option>
                                     <option value="60 Days per trip">60 Days max per trip (Annual Policy)</option>
                                     <option value="90 Days per trip">90 Days max per trip (Annual Policy)</option>
@@ -315,14 +315,14 @@ export default function TravelInsuranceForm() {
                                             <input
                                                 type="text"
                                                 placeholder="Name"
-                                                className="p-3 border border-gray-200 rounded-lg text-sm focus:ring-1 focus:ring-[var(--color-primary)] min-h-[44px]"
+                                                className="form-input"
                                                 value={member.name}
                                                 onChange={(e) => updateFamilyMember(index, 'name', e.target.value)}
                                                 required
                                             />
                                             <input
                                                 type="date"
-                                                className="p-3 border border-gray-200 rounded-lg text-sm focus:ring-1 focus:ring-[var(--color-primary)] min-h-[44px]"
+                                                className="form-input"
                                                 value={member.dob}
                                                 onChange={(e) => updateFamilyMember(index, 'dob', e.target.value)}
                                                 required

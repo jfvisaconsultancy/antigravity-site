@@ -56,7 +56,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                             name="fullName"
                             placeholder="John Doe"
                             required
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none"
+                            className="form-input"
                         />
                         {state?.errors?.fullName && <p className="text-red-500 text-xs mt-1">{state.errors.fullName}</p>}
                     </div>
@@ -69,7 +69,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                             name="phone"
                             placeholder="+92 306..."
                             required
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none"
+                            className="form-input"
                         />
                         {state?.errors?.phone && <p className="text-red-500 text-xs mt-1">{state.errors.phone}</p>}
                     </div>
@@ -102,7 +102,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                                     setCountry('')
                                 }
                             }}
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none appearance-none"
+                            className="form-select appearance-none"
                         >
                             <option value="" disabled>Select a service</option>
                             <option value="Visit Visa">Visit Visa</option>
@@ -123,7 +123,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                             id="country"
                             name="country"
                             placeholder="e.g. UK, Canada, UAE"
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none"
+                            className="form-input"
                         />
                     </div>
                 </div>
@@ -134,7 +134,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                         <select
                             id="educationLevel"
                             name="educationLevel"
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none appearance-none"
+                            className="form-select appearance-none"
                         >
                             <option value="">Select Education</option>
                             <option value="Matric/O-Level">Matric / O-Level</option>
@@ -151,7 +151,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                         <select
                             id="travelHistory"
                             name="travelHistory"
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none appearance-none"
+                            className="form-select appearance-none"
                         >
                             <option value="">Select History</option>
                             <option value="Fresh Passport">Fresh Passport</option>
@@ -168,7 +168,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                         <select
                             id="passportStatus"
                             name="passportStatus"
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none appearance-none"
+                            className="form-select appearance-none"
                         >
                             <option value="">Select Status</option>
                             <option value="Valid">Valid</option>
@@ -183,7 +183,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                         <select
                             id="urgency"
                             name="urgency"
-                            className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none appearance-none"
+                            className="form-select appearance-none"
                         >
                             <option value="Medium">Medium</option>
                             <option value="Low">Low</option>
@@ -200,7 +200,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                         name="message"
                         placeholder="Briefly describe your requirements or any past refusals..."
                         required
-                        className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none min-h-[100px] resize-y text-sm"
+                        className="form-textarea min-h-[100px] resize-y text-sm"
                     ></textarea>
                     {state?.errors?.message && <p className="text-red-500 text-xs mt-1">{state.errors.message}</p>}
                 </div>
