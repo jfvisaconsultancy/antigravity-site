@@ -110,24 +110,22 @@ ul {
 /* Utilities */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--max-width-container);
     margin: 0 auto;
     padding: 0 var(--spacing-container);
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 32px;
-    font-weight: 600;
+    padding: 14px 36px;
+    font-weight: 700;
     letter-spacing: 0.5px;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
-    margin-top: 18px;
-    /* Standardizing top rhythm */
 }
 
 .btn-primary {
@@ -137,8 +135,8 @@ ul {
 
 .btn-primary:hover {
     background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-premium);
 }
 
 .btn-outline {
@@ -153,7 +151,27 @@ ul {
 }
 
 .section-padding {
-    padding: var(--spacing-lg) 0;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
+.section-gap {
+    margin-bottom: var(--gap-section);
+}
+
+.max-w-text {
+    max-width: var(--max-width-text);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading-margin {
+    margin-bottom: var(--spacing-heading-text);
+}
+
+.card-grid {
+    display: grid;
+    gap: var(--gap-card);
 }
 
 .text-center {

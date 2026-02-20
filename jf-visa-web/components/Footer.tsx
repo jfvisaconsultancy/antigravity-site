@@ -48,10 +48,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest text-[var(--color-accent)]">Help Desk</h4>
                         <ul className="space-y-4">
-                            <li><Link href="/contact" className="text-white/60 hover:text-white text-sm transition-colors">Refusal Help</Link></li>
-                            <li><Link href="/contact" className="text-white/60 hover:text-white text-sm transition-colors">Profile Evaluation</Link></li>
+                            <li><Link href="/refusal-case" className="text-white/60 hover:text-white text-sm transition-colors">Refusal Recovery</Link></li>
+                            <li><Link href="/contact" className="text-white/60 hover:text-white text-sm transition-colors">Free Assessment</Link></li>
                             <li><Link href="/about" className="text-white/60 hover:text-white text-sm transition-colors">Success Stories</Link></li>
-                            <li><Link href="/contact" className="text-white/60 hover:text-white text-sm transition-colors">Contact Advisor</Link></li>
+                            <li><a href={`https://wa.me/${CONFIG.whatsapp}`} className="text-white/60 hover:text-white text-sm transition-colors">Talk on WhatsApp</a></li>
                         </ul>
                     </div>
 
