@@ -116,6 +116,23 @@ export default function Services() {
                         </div>
                     </div>
 
+                    {/* Travel Insurance */}
+                    <div id="travel-insurance" className="service-detail flex flex-col md:flex-row items-center gap-12">
+                        <div className="service-image-container flex-1 flex justify-center">
+                            <img src="/images/service_travel_insurance.png" alt="Travel Insurance" className="rounded-lg shadow-lg max-h-[300px] object-cover w-full" />
+                        </div>
+                        <div className="service-info flex-1">
+                            <h2 className="text-primary text-2xl font-bold mb-4">Travel Insurance Accepted by All Embassies</h2>
+                            <p className="mb-4">Get instant, embassy-approved travel insurance for Schengen, UK, USA, and worldwide travel.</p>
+                            <ul className="service-list space-y-2 mb-6">
+                                <li className="flex items-start gap-2"><i className="fa-solid fa-file-shield text-accent mt-1"></i> <span><strong>Instant Issuance:</strong> PDF policy delivered via WhatsApp/Email in 2-10 minutes.</span></li>
+                                <li className="flex items-start gap-2"><i className="fa-solid fa-hand-holding-medical text-accent mt-1"></i> <span><strong>Comprehensive Cover:</strong> Medical, Hospitalization, and COVID-19 protection.</span></li>
+                                <li className="flex items-start gap-2"><i className="fa-solid fa-certificate text-accent mt-1"></i> <span><strong>Embassy Approved:</strong> 100% acceptance rate for visa applications.</span></li>
+                            </ul>
+                            <Link href="/travel-insurance" className="btn btn-primary">Get Travel Insurance</Link>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </>

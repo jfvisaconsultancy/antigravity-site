@@ -6,22 +6,22 @@ interface ServiceCardProps {
     image: string;
     title: string;
     description: string;
-    linkHash: string; // e.g., 'europe' for /services#europe
+    linkHash?: string; // e.g., 'europe' for /services#europe
+    href?: string;     // e.g., '/travel-insurance'
 }
 
-export default function ServiceCard({ id, image, title, description, linkHash }: ServiceCardProps) {
+export default function ServiceCard({ id, image, title, description, linkHash, href }: ServiceCardProps) {
+    const finalHref = href || `/services#${linkHash}`;
+
     return (
         <article className="service-card" id={id}>
             <div className="relative h-[200px] w-full">
-                {/* Using Next.js Image for optimization, but standard img tag is also fine if layout CSS handles it well. 
-             Given existing CSS .service-img { height: 200px; width: 100%; object-fit: cover; }, 
-             Next.js Image needs 'fill' or width/height. 'fill' is best for object-fit: cover behavior container. */}
                 <img src={image} alt={title} className="service-img" />
             </div>
             <div className="service-content">
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <Link href={`/services#${linkHash}`} className="service-link">
+                <Link href={finalHref} className="service-link">
                     Learn More <i className="fa-solid fa-arrow-right"></i>
                 </Link>
             </div>

@@ -128,35 +128,35 @@ export default function Home() {
               image="/images/service_europe_visa_1769526116284.png"
               title="Study Visa Assistance"
               description="Get admission and visa support for Europe, UK, and beyond."
-              linkHash="study-visa"
+              href="/study-visa"
             />
             <ServiceCard
               id="work-visa"
               image="/images/service_gcc_visa_1769526468980.png"
               title="Work Visa & Work Permits"
               description="Explore legal employment opportunities abroad."
-              linkHash="work-visa"
+              href="/work-permit"
             />
             <ServiceCard
               id="visit-visa"
               image="/images/service_canada.png"
               title="Visit Visa Services"
               description="Hassle-free visit visa processing with documentation guidance."
-              linkHash="visit-visa"
+              href="/visit-visa"
             />
             <ServiceCard
               id="immigration"
               image="/images/service_usa_visa_1769526245585.png"
               title="Immigration & Residency"
               description="Professional pathway consultation."
-              linkHash="immigration"
+              href="/immigration"
             />
             <ServiceCard
               id="travel-insurance"
               image="/images/service_travel_insurance.png"
               title="Travel Insurance"
               description="Worldwide medical and travel coverage for safe journeys."
-              linkHash="travel-insurance"
+              href="/travel-insurance"
             />
             <ServiceCard
               id="life-insurance"
