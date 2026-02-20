@@ -19,6 +19,10 @@ const contactFormSchema = z.object({
         'Life Insurance'
     ] as const),
     country: z.string().optional(),
+    educationLevel: z.string().optional(),
+    travelHistory: z.string().optional(),
+    passportStatus: z.string().optional(),
+    urgency: z.enum(['Low', 'Medium', 'High', 'Urgent']).optional(),
     message: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
@@ -70,6 +74,10 @@ export async function sendEmail(prevState: any, formData: FormData) {
         phone: formData.get('phone'),
         interest: formData.get('interest'),
         country: formData.get('country'),
+        educationLevel: formData.get('educationLevel'),
+        travelHistory: formData.get('travelHistory'),
+        passportStatus: formData.get('passportStatus'),
+        urgency: formData.get('urgency'),
         message: formData.get('message'),
     }
 
@@ -108,7 +116,11 @@ export async function sendEmail(prevState: any, formData: FormData) {
                 Email: ${data.email}
                 Phone: ${data.phone}
                 Interested In: ${data.interest}
-                Country: ${data.country || 'N/A'}
+                Country/Destination: ${data.country || 'N/A'}
+                Education Level: ${data.educationLevel || 'N/A'}
+                Travel History: ${data.travelHistory || 'N/A'}
+                Passport Status: ${data.passportStatus || 'N/A'}
+                Urgency: ${data.urgency || 'N/A'}
                 Message: ${data.message}
             `,
             html: `
@@ -117,7 +129,11 @@ export async function sendEmail(prevState: any, formData: FormData) {
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Phone:</strong> ${data.phone}</p>
                 <p><strong>Interested In:</strong> ${data.interest}</p>
-                <p><strong>Country:</strong> ${data.country || 'N/A'}</p>
+                <p><strong>Country/Destination:</strong> ${data.country || 'N/A'}</p>
+                <p><strong>Education Level:</strong> ${data.educationLevel || 'N/A'}</p>
+                <p><strong>Travel History:</strong> ${data.travelHistory || 'N/A'}</p>
+                <p><strong>Passport Status:</strong> ${data.passportStatus || 'N/A'}</p>
+                <p><strong>Urgency:</strong> ${data.urgency || 'N/A'}</p>
                 <p><strong>Message:</strong> ${data.message}</p>
             `,
         }
@@ -129,7 +145,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
             try {
                 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
                 await client.messages.create({
-                    body: `🚀 *New Inquiry*\n*Name:* ${data.fullName}\n*Service:* ${data.interest}\n*Phone:* ${data.phone}\n*Msg:* ${data.message.substring(0, 100)}...`,
+                    body: `🚀 *New Inquiry*\n*Name:* ${data.fullName}\n*Service:* ${data.interest}\n*Dest:* ${data.country || 'N/A'}\n*Urgency:* ${data.urgency || 'N/A'}\n*Phone:* ${data.phone}\n*Education:* ${data.educationLevel || 'N/A'}`,
                     from: process.env.TWILIO_FROM_WHATSAPP || 'whatsapp:+14155238886',
                     to: process.env.WHATSAPP_TO_NUMBER || `whatsapp:+923065870215`
                 })
