@@ -68,8 +68,10 @@
 .footer {
     background-color: var(--color-primary);
     color: var(--color-white);
-    padding: 4rem 0 1rem;
-    margin-top: 4rem;
+    padding: var(--spacing-lg) 0 1rem;
+    /* Using standardized spacing */
+    margin-top: 0;
+    /* Removing redundant margin as section-padding handles separation */
 }
 
 .footer-grid {
@@ -130,6 +132,6 @@
     }
 
     .section-padding {
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-lg) 0;
     }
 }

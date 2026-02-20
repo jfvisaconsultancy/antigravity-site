@@ -90,55 +90,55 @@ export default function TravelInsuranceForm() {
                     </button>
                 </div>
             ) : (
-                <form action={formAction} className="space-y-8">
+                <form action={formAction} className="space-y-10">
                     {/* Honeypot */}
                     <div style={{ display: 'none' }}>
                         <input type="text" name="website_url" tabIndex={-1} autoComplete="off" />
                     </div>
 
                     {/* Personal Info */}
-                    <div className="space-y-5">
-                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-2 flex items-center gap-2">
+                    <div className="space-y-6">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-3 flex items-center gap-2">
                             <i className="fa-solid fa-user-circle text-[var(--color-accent)]"></i> Personal Information
                         </h4>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div className="space-y-1">
+                        <div className="grid md:grid-cols-2 gap-x-6 gap-y-4">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Full Name</label>
-                                <input name="fullName" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all" placeholder="As on Passport" />
+                                <input name="fullName" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all min-h-[44px]" placeholder="As on Passport" />
                                 {state?.errors?.fullName && <p className="text-red-500 text-xs mt-1">{state.errors.fullName}</p>}
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Date of Birth</label>
-                                <input name="dob" type="date" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all" />
+                                <input name="dob" type="date" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" />
                                 {state?.errors?.dob && <p className="text-red-500 text-xs mt-1">{state.errors.dob}</p>}
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Passport Number</label>
-                                <input name="passportNumber" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all" placeholder="Enter Passport No." />
+                                <input name="passportNumber" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="Enter Passport No." />
                                 {state?.errors?.passportNumber && <p className="text-red-500 text-xs mt-1">{state.errors.passportNumber}</p>}
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Nationality</label>
-                                <input name="nationality" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all" placeholder="e.g. Pakistani" />
+                                <input name="nationality" type="text" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="e.g. Pakistani" />
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Phone (WhatsApp)</label>
-                                <input name="phone" type="tel" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all" placeholder="+92 3XX XXXXXXX" />
+                                <input name="phone" type="tel" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="+92 3XX XXXXXXX" />
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Email</label>
-                                <input name="email" type="email" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all" placeholder="yourname@email.com" />
+                                <input name="email" type="email" required className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]" placeholder="yourname@email.com" />
                             </div>
                         </div>
                     </div>
 
                     {/* Travel Details */}
-                    <div className="space-y-5">
-                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-2 flex items-center gap-2">
+                    <div className="space-y-6">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-3 flex items-center gap-2">
                             <i className="fa-solid fa-plane-departure text-[var(--color-accent)]"></i> Travel Details
                         </h4>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div className="space-y-1">
+                        <div className="grid md:grid-cols-2 gap-x-6 gap-y-4">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Country of Travel</label>
                                 <div className="relative">
                                     <input
@@ -146,7 +146,7 @@ export default function TravelInsuranceForm() {
                                         list="countries-list"
                                         type="text"
                                         required
-                                        className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+                                        className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]"
                                         placeholder="Search countries..."
                                         value={destination}
                                         onChange={(e) => setDestination(e.target.value)}
@@ -157,12 +157,12 @@ export default function TravelInsuranceForm() {
                                     <i className="fa-solid fa-search absolute right-3 top-4 text-gray-400"></i>
                                 </div>
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Visa Type</label>
                                 <select
                                     name="visaType"
                                     required
-                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all bg-white"
+                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all bg-white min-h-[44px]"
                                     value={visaType}
                                     onChange={(e) => setVisaType(e.target.value)}
                                 >
@@ -174,31 +174,31 @@ export default function TravelInsuranceForm() {
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Travel Start Date</label>
                                 <input
                                     name="startDate"
                                     type="date"
                                     required
-                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]"
                                     value={startDate}
                                     onChange={(e) => setStartDate(e.target.value)}
                                 />
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Travel End Date</label>
                                 <input
                                     name="endDate"
                                     type="date"
                                     required
-                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+                                    className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] transition-all min-h-[44px]"
                                     value={endDate}
                                     onChange={(e) => setEndDate(e.target.value)}
                                 />
                             </div>
                         </div>
                         {duration > 0 && (
-                            <div className="bg-[var(--color-accent-light)] text-[var(--color-primary)] p-3 rounded-lg border border-[var(--color-accent)] inline-block mt-2">
+                            <div className="bg-[var(--color-accent-light)] text-[var(--color-primary)] p-3 rounded-lg border border-[var(--color-accent)] inline-block mt-4">
                                 <p className="text-sm font-bold flex items-center gap-2">
                                     <i className="fa-solid fa-calendar-check"></i>
                                     Duration: {duration} Days (Auto-calculated)
@@ -209,14 +209,14 @@ export default function TravelInsuranceForm() {
                     </div>
 
                     {/* Insurance Selection */}
-                    <div className="space-y-5">
-                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-2 flex items-center gap-2">
+                    <div className="space-y-6">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-3 flex items-center gap-2">
                             <i className="fa-solid fa-shield-halved text-[var(--color-accent)]"></i> Plan Selection
                         </h4>
 
-                        <div className="space-y-3">
+                        <div className="space-y-3.5">
                             <label className="block text-sm font-semibold text-gray-700">Plan Type</label>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {[
                                     { id: 'Individual', label: 'Individual', icon: 'fa-user' },
                                     { id: 'Family', label: 'Family', icon: 'fa-users' },
@@ -224,7 +224,7 @@ export default function TravelInsuranceForm() {
                                     { id: 'Multi-Trip', label: 'Multi-Trip', icon: 'fa-rotate' },
                                     { id: 'Long Stay', label: 'Long Stay', icon: 'fa-house-user' }
                                 ].map((type) => (
-                                    <label key={type.id} className={`cursor-pointer border-2 p-3 rounded-xl text-center text-sm transition-all flex flex-col items-center gap-2 ${planType === type.id ? 'bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-md' : 'bg-white border-gray-200 hover:border-[var(--color-accent)] hover:bg-gray-50'}`}>
+                                    <label key={type.id} className={`cursor-pointer border-2 p-4 rounded-xl text-center text-sm transition-all flex flex-col items-center gap-2 ${planType === type.id ? 'bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-md' : 'bg-white border-gray-200 hover:border-[var(--color-accent)] hover:bg-gray-50'}`}>
                                         <input
                                             type="radio"
                                             name="planType"
@@ -240,18 +240,18 @@ export default function TravelInsuranceForm() {
                             </div>
                         </div>
 
-                        <div className="space-y-3">
+                        <div className="space-y-3.5">
                             <div className="flex justify-between items-center">
                                 <label className="block text-sm font-semibold text-gray-700">Coverage Amount</label>
                                 <span className="bg-yellow-100 text-yellow-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">Required for Visa</span>
                             </div>
-                            <div className="grid grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {[
                                     { val: '30000', label: '€30,000', badge: 'Basic' },
                                     { val: '50000', label: '€50,000', badge: 'Popular' },
                                     { val: '100000', label: '€100,000', badge: 'Premium' }
                                 ].map((opt) => (
-                                    <label key={opt.val} className={`relative cursor-pointer border-2 p-4 rounded-xl text-center transition-all ${coverage === opt.val ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)] shadow-md' : 'bg-white border-gray-200 hover:bg-gray-50'}`}>
+                                    <label key={opt.val} className={`relative cursor-pointer border-2 p-5 rounded-xl text-center transition-all ${coverage === opt.val ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)] shadow-md' : 'bg-white border-gray-200 hover:bg-gray-50'}`}>
                                         <input
                                             type="radio"
                                             name="coverageAmount"
@@ -263,7 +263,7 @@ export default function TravelInsuranceForm() {
                                         {opt.badge === 'Popular' && (
                                             <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">RECOMMENDED</span>
                                         )}
-                                        <div className="text-lg font-black">{opt.label}</div>
+                                        <div className="text-xl font-black">{opt.label}</div>
                                         <div className={`text-[10px] font-bold ${coverage === opt.val ? 'text-white/80' : 'text-gray-400'}`}>{opt.badge}</div>
                                     </label>
                                 ))}
@@ -271,30 +271,30 @@ export default function TravelInsuranceForm() {
                         </div>
 
                         {/* Travelers Detail Section */}
-                        <div className="grid md:grid-cols-2 gap-4 pt-2">
-                            <div className="space-y-1">
+                        <div className="grid md:grid-cols-2 gap-x-6 gap-y-4 pt-2">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Number of Travelers</label>
-                                <input name="travelersCount" type="number" min="1" defaultValue="1" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)]" />
+                                <input name="travelersCount" type="number" min="1" defaultValue="1" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] min-h-[44px]" />
                             </div>
-                            <div className="space-y-1">
+                            <div className="space-y-1.5">
                                 <label className="block text-sm font-semibold text-gray-700">Age of Traveler(s)</label>
-                                <input name="travelersAges" type="text" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)]" placeholder="e.g. 25, 30, 5" />
+                                <input name="travelersAges" type="text" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] min-h-[44px]" placeholder="e.g. 25, 30, 5" />
                                 <p className="text-[10px] text-gray-500">Separated by commas if multiple</p>
                             </div>
                         </div>
 
                         {/* Conditional Fields */}
                         {planType === 'Student' && (
-                            <div className="p-4 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300">
+                            <div className="p-5 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
                                 <label className="block text-sm font-bold mb-2">University / College Name</label>
-                                <input name="universityName" type="text" className="w-full p-3 border border-gray-200 rounded-lg" placeholder="Enter institution name" />
+                                <input name="universityName" type="text" className="w-full p-3 border border-gray-200 rounded-lg min-h-[44px]" placeholder="Enter institution name" />
                             </div>
                         )}
 
                         {planType === 'Multi-Trip' && (
-                            <div className="p-4 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300">
+                            <div className="p-5 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
                                 <label className="block text-sm font-bold mb-2">Trip Frequency</label>
-                                <select name="multiTripFreq" className="w-full p-3 border border-gray-200 rounded-lg bg-white">
+                                <select name="multiTripFreq" className="w-full p-3 border border-gray-200 rounded-lg bg-white min-h-[44px]">
                                     <option value="30 Days per trip">30 Days max per trip (Annual Policy)</option>
                                     <option value="60 Days per trip">60 Days max per trip (Annual Policy)</option>
                                     <option value="90 Days per trip">90 Days max per trip (Annual Policy)</option>
@@ -304,36 +304,36 @@ export default function TravelInsuranceForm() {
 
                         {/* Family Members Dynamic Fields */}
                         {planType === 'Family' && (
-                            <div className="bg-gray-50 p-5 rounded-2xl border border-gray-200 space-y-4">
+                            <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-5 mt-4">
                                 <div className="flex justify-between items-center">
                                     <label className="block text-sm font-bold text-gray-800">Family Member Details</label>
                                     <span className="text-[10px] text-gray-500 font-medium">Add spouse & children under 18</span>
                                 </div>
                                 {familyMembers.map((member, index) => (
-                                    <div key={index} className="flex gap-2 items-start bg-white p-3 rounded-lg border border-gray-100 shadow-sm animate-in zoom-in-95">
-                                        <div className="flex-grow grid grid-cols-2 gap-3">
+                                    <div key={index} className="flex gap-3 items-start bg-white p-4 rounded-lg border border-gray-100 shadow-sm animate-in zoom-in-95">
+                                        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <input
                                                 type="text"
                                                 placeholder="Name"
-                                                className="p-2 border border-gray-200 rounded-lg text-sm focus:ring-1 focus:ring-[var(--color-primary)]"
+                                                className="p-3 border border-gray-200 rounded-lg text-sm focus:ring-1 focus:ring-[var(--color-primary)] min-h-[44px]"
                                                 value={member.name}
                                                 onChange={(e) => updateFamilyMember(index, 'name', e.target.value)}
                                                 required
                                             />
                                             <input
                                                 type="date"
-                                                className="p-2 border border-gray-200 rounded-lg text-sm focus:ring-1 focus:ring-[var(--color-primary)]"
+                                                className="p-3 border border-gray-200 rounded-lg text-sm focus:ring-1 focus:ring-[var(--color-primary)] min-h-[44px]"
                                                 value={member.dob}
                                                 onChange={(e) => updateFamilyMember(index, 'dob', e.target.value)}
                                                 required
                                             />
                                         </div>
-                                        <button type="button" onClick={() => removeFamilyMember(index)} className="text-red-400 hover:text-red-600 p-2 transition-colors">
+                                        <button type="button" onClick={() => removeFamilyMember(index)} className="text-red-400 hover:text-red-600 p-3 transition-colors">
                                             <i className="fa-solid fa-trash-can"></i>
                                         </button>
                                     </div>
                                 ))}
-                                <button type="button" onClick={addFamilyMember} className="w-full py-2 px-4 border-2 border-dashed border-gray-300 text-gray-500 rounded-xl hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all flex items-center justify-center gap-2 font-semibold">
+                                <button type="button" onClick={addFamilyMember} className="w-full py-3 px-4 border-2 border-dashed border-gray-300 text-gray-500 rounded-xl hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all flex items-center justify-center gap-2 font-semibold min-h-[44px]">
                                     <i className="fa-solid fa-plus"></i> Add Family Member
                                 </button>
                                 <input type="hidden" name="familyMembers" value={JSON.stringify(familyMembers)} />
@@ -342,7 +342,7 @@ export default function TravelInsuranceForm() {
                     </div>
 
                     {/* Urgency */}
-                    <div className="flex items-center gap-3 p-4 bg-orange-50 border border-orange-100 rounded-2xl">
+                    <div className="flex items-center gap-4 p-5 bg-orange-50 border border-orange-100 rounded-2xl">
                         <input
                             type="checkbox"
                             id="urgentProcessing"
@@ -357,25 +357,27 @@ export default function TravelInsuranceForm() {
                         </div>
                     </div>
 
-                    <div className="pt-4">
-                        <SubmitButton label="Generate My Policy Quote" />
-                        <div className="flex items-center justify-center gap-6 mt-6 pb-2">
-                            <div className="flex flex-col items-center gap-1">
+                    <div className="pt-6">
+                        <div className="mb-6">
+                            <SubmitButton label="Generate My Policy Quote" />
+                        </div>
+                        <div className="flex items-center justify-center gap-8 mt-6 pb-2">
+                            <div className="flex flex-col items-center gap-1.5">
                                 <i className="fa-solid fa-lock text-green-500 text-xs"></i>
                                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Secure</span>
                             </div>
-                            <div className="flex flex-col items-center gap-1">
+                            <div className="flex flex-col items-center gap-1.5">
                                 <i className="fa-solid fa-bolt text-blue-500 text-xs"></i>
                                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Instant</span>
                             </div>
-                            <div className="flex flex-col items-center gap-1">
+                            <div className="flex flex-col items-center gap-1.5">
                                 <i className="fa-solid fa-shield-check text-purple-500 text-xs"></i>
                                 <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Verified</span>
                             </div>
                         </div>
                     </div>
 
-                    <p className="text-[10px] text-center text-gray-400 leading-relaxed">
+                    <p className="text-[10px] text-center text-gray-400 leading-relaxed px-4">
                         By clicking "Generate Quote", you agree to be contacted by JF Visa advisors regarding your insurance policy via Email and WhatsApp.
                         <br />No payment is required at this stage.
                     </p>
