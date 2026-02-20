@@ -58,7 +58,97 @@ const travelInsuranceSchema = z.object({
 })
 
 export async function sendEmail(prevState: any, formData: FormData) {
-    // ... (rest of sendEmail stays same)
+    // Honeypot check
+    const honeypot = formData.get('website_url')
+    if (honeypot) {
+        return { success: false, message: 'Spam detected. Submission ignored.' }
+    }
+
+    const rawData = {
+        fullName: formData.get('fullName'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        interest: formData.get('interest'),
+        country: formData.get('country'),
+        message: formData.get('message'),
+    }
+
+    const validatedFields = contactFormSchema.safeParse(rawData)
+
+    if (!validatedFields.success) {
+        return {
+            success: false,
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Please fix the errors in the form.',
+        }
+    }
+
+    const data = validatedFields.data
+
+    try {
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            throw new Error("Email credentials are not set.")
+        }
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        })
+
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: 'jfvisaconsultancy@gmail.com',
+            replyTo: data.email,
+            subject: `New Inquiry from ${data.fullName} - ${data.interest}`,
+            text: `
+                Name: ${data.fullName}
+                Email: ${data.email}
+                Phone: ${data.phone}
+                Interested In: ${data.interest}
+                Country: ${data.country || 'N/A'}
+                Message: ${data.message}
+            `,
+            html: `
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> ${data.fullName}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Phone:</strong> ${data.phone}</p>
+                <p><strong>Interested In:</strong> ${data.interest}</p>
+                <p><strong>Country:</strong> ${data.country || 'N/A'}</p>
+                <p><strong>Message:</strong> ${data.message}</p>
+            `,
+        }
+
+        await transporter.sendMail(mailOptions)
+
+        // WhatsApp Notification
+        if (process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN) {
+            try {
+                const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
+                await client.messages.create({
+                    body: `🚀 *New Inquiry*\n*Name:* ${data.fullName}\n*Service:* ${data.interest}\n*Phone:* ${data.phone}\n*Msg:* ${data.message.substring(0, 100)}...`,
+                    from: process.env.TWILIO_FROM_WHATSAPP || 'whatsapp:+14155238886',
+                    to: process.env.WHATSAPP_TO_NUMBER || `whatsapp:+923065870215`
+                })
+            } catch (waError) {
+                console.error('WhatsApp Error:', waError)
+            }
+        }
+
+        return {
+            success: true,
+            message: 'Your message has been sent successfully!',
+        }
+    } catch (error: any) {
+        console.error('Email Error:', error)
+        return {
+            success: false,
+            message: `Something went wrong: ${error.message}`,
+        }
+    }
 }
 
 export async function submitTravelInsurance(prevState: any, formData: FormData) {
