@@ -35,12 +35,12 @@ export default function Header() {
 
                 <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <ul className="nav-menu" style={{ flexDirection: isMenuOpen ? 'column' : 'row', alignItems: 'center' }}>
-                        <li><Link href="/study-visa" className={`nav-link ${isActive('/study-visa')}`} onClick={() => setIsMenuOpen(false)}>I want to Study Abroad</Link></li>
-                        <li><Link href="/visit-visa" className={`nav-link ${isActive('/visit-visa')}`} onClick={() => setIsMenuOpen(false)}>I want a Visit Visa</Link></li>
-                        <li><Link href="/work-permit" className={`nav-link ${isActive('/work-permit')}`} onClick={() => setIsMenuOpen(false)}>I want to Work Abroad</Link></li>
-                        <li><Link href="/immigration" className={`nav-link ${isActive('/immigration')}`} onClick={() => setIsMenuOpen(false)}>I want Immigration / PR</Link></li>
-                        <li><Link href="/refusal-case" className={`nav-link ${isActive('/refusal-case')}`} onClick={() => setIsMenuOpen(false)}>My Visa Was Refused</Link></li>
-                        <li><Link href="/travel-insurance" className={`nav-link ${isActive('/travel-insurance')}`} onClick={() => setIsMenuOpen(false)}>I Need Travel Insurance</Link></li>
+                        <li><Link href="/study-visa" className={`nav-link ${isActive('/study-visa')}`} onClick={() => setIsMenuOpen(false)}>Study Abroad</Link></li>
+                        <li><Link href="/visit-visa" className={`nav-link ${isActive('/visit-visa')}`} onClick={() => setIsMenuOpen(false)}>Visit Visa</Link></li>
+                        <li><Link href="/work-permit" className={`nav-link ${isActive('/work-permit')}`} onClick={() => setIsMenuOpen(false)}>Work Abroad</Link></li>
+                        <li><Link href="/immigration" className={`nav-link ${isActive('/immigration')}`} onClick={() => setIsMenuOpen(false)}>Immigration / PR</Link></li>
+                        <li><Link href="/refusal-case" className={`nav-link ${isActive('/refusal-case')}`} onClick={() => setIsMenuOpen(false)}>Visa Refused</Link></li>
+                        <li><Link href="/travel-insurance" className={`nav-link ${isActive('/travel-insurance')}`} onClick={() => setIsMenuOpen(false)}>Travel Insurance</Link></li>
                         <li className="ml-4">
                             <Link href="/contact" className="btn btn-primary" style={{ marginTop: 0, padding: '10px 20px', fontSize: '0.8rem' }} onClick={() => setIsMenuOpen(false)}>
                                 Free Assessment

@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
                   <i className="fa-solid fa-earth-americas text-3xl text-white"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Immigration</h3>
+                <h3 className="text-2xl font-bold mb-4 font-heading">Immigration / PR</h3>
                 <p className="text-white/60 mb-8">Permanent residency pathways for Canada, Australia, and European settled status.</p>
                 <span className="text-[var(--color-accent)] font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Explore Pathways <i className="fa-solid fa-arrow-right"></i>
@@ -124,7 +124,7 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-red-900/10 flex items-center justify-center mb-8 group-hover:bg-red-600 transition-colors">
                   <i className="fa-solid fa-circle-exclamation text-3xl text-red-600 group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Refusal Case</h3>
+                <h3 className="text-2xl font-bold mb-4 font-heading">Visa Refused</h3>
                 <p className="text-white/60 mb-8">Had a previous refusal? We specialize in recovering and justifying complex refusal cases.</p>
                 <span className="text-red-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Recover My Case <i className="fa-solid fa-arrow-right"></i>
