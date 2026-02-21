@@ -53,12 +53,12 @@
 }
 
 .service-card {
-    background-color: var(--color-white);
+    background-color: var(--bg-surface);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-soft);
 }
 
 .service-card:hover {
@@ -88,8 +88,9 @@
 }
 
 .service-content p {
-    color: var(--color-text-light);
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 .service-link {
@@ -106,7 +107,7 @@
 
 /* About Section Preview */
 .about-preview {
-    background-color: var(--color-white);
+    background-color: var(--bg-base);
 }
 
 .about-grid {
@@ -123,8 +124,8 @@
 
 /* Testimonials */
 .testimonials {
-    background-color: var(--color-primary-light);
-    color: var(--color-white);
+    background-color: var(--bg-contrast);
+    color: var(--text-inverse);
     text-align: center;
 }
 
@@ -213,10 +214,11 @@
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    background: var(--color-white);
+    background: var(--bg-surface);
     padding: 24px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-soft);
 }
 
 @media (max-width: 480px) {
@@ -245,12 +247,12 @@
 .form-textarea {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--border-soft);
     border-radius: var(--border-radius-md);
     font-family: var(--font-body);
     font-size: 1rem;
-    color: var(--color-text-dark);
-    background-color: var(--color-input-bg);
+    color: var(--text-primary);
+    background-color: var(--bg-surface);
     min-height: var(--input-height-min);
     transition: all 0.2s ease;
     outline: none;
@@ -260,7 +262,7 @@
 .form-group textarea::placeholder,
 .form-input::placeholder,
 .form-textarea::placeholder {
-    color: var(--color-placeholder);
+    color: var(--text-muted);
     opacity: 1;
 }
 
@@ -270,9 +272,9 @@
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 2px rgba(196, 155, 70, 0.1);
-    background-color: var(--color-white);
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px var(--color-accent-tint);
+    background-color: var(--bg-surface);
 }
 
 /* Autofill Overrides */
@@ -300,24 +302,24 @@ select:-webkit-autofill:focus,
 
 /* Fix for Select field placeholders and values */
 select {
-    color: var(--color-text-dark);
+    color: var(--text-primary);
 }
 
 select:invalid,
 select option[value=""] {
-    color: var(--color-placeholder);
+    color: var(--text-muted);
 }
 
 select option {
-    color: var(--color-text-dark);
-    background: white;
+    color: var(--text-primary);
+    background: var(--bg-surface);
 }
 
 /* Selection Cards (for Radio/Checkbox blocks) */
 .selection-card {
     cursor: pointer;
-    border: 2px solid var(--color-border);
-    background-color: var(--color-white);
+    border: 2px solid var(--border-soft);
+    background-color: var(--bg-surface);
     padding: 20px;
     border-radius: var(--border-radius-lg);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -327,12 +329,12 @@ select option {
     align-items: center;
     gap: 12px;
     text-align: center;
-    color: var(--color-text-dark);
+    color: var(--text-primary);
 }
 
 .selection-card:hover {
     border-color: var(--color-accent);
-    background-color: var(--color-off-white);
+    background-color: var(--bg-soft);
 }
 
 .selection-card.active {

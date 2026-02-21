@@ -16,6 +16,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Semantic Color Mapping */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-soft: var(--bg-soft);
+  --color-bg-contrast: var(--bg-contrast);
+
+  --color-border-soft: var(--border-soft);
+  --color-border-focus: var(--border-focus);
+  --color-border-active: var(--border-active);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +42,6 @@
 
 /* Overriding Tailwind or Next.js defaults to respect migrated variables */
 body {
-  background-color: var(--color-off-white) !important;
-  color: var(--color-text-dark) !important;
+  background-color: var(--bg-base) !important;
+  color: var(--text-primary) !important;
 }

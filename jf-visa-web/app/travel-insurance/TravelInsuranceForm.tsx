@@ -55,12 +55,12 @@ export default function TravelInsuranceForm() {
     }
 
     return (
-        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 sticky top-4" id="apply-form">
+        <div className="bg-bg-surface p-6 md:p-8 rounded-2xl shadow-premium border border-border-soft sticky top-4" id="apply-form">
             <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-[var(--color-primary)] mb-2">
+                <h3 className="text-3xl font-bold text-text-primary mb-2">
                     Apply Now
                 </h3>
-                <p className="text-gray-600">Get your embassy-approved policy in minutes</p>
+                <p className="text-text-secondary">Get your embassy-approved policy in minutes</p>
             </div>
 
             {state?.message && !state.success && (
@@ -75,8 +75,8 @@ export default function TravelInsuranceForm() {
                     <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
                         <i className="fa-solid fa-check"></i>
                     </div>
-                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Application Sent!</h4>
-                    <p className="text-gray-600 mb-6">{state.message}</p>
+                    <h4 className="text-2xl font-bold text-text-primary mb-2">Application Sent!</h4>
+                    <p className="text-text-secondary mb-6">{state.message}</p>
                     <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
                         <p className="text-blue-800 font-semibold flex items-center justify-center gap-2">
                             <i className="fa-solid fa-clock"></i> Your advisor will contact you within 5 minutes
@@ -84,7 +84,7 @@ export default function TravelInsuranceForm() {
                     </div>
                     <button
                         onClick={() => window.location.reload()}
-                        className="mt-8 text-[var(--color-primary)] font-bold hover:underline"
+                        className="mt-8 text-text-primary font-bold hover:underline"
                     >
                         Submit another application
                     </button>
@@ -98,35 +98,35 @@ export default function TravelInsuranceForm() {
 
                     {/* Personal Info */}
                     <div className="space-y-6">
-                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-3 flex items-center gap-2">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-text-muted border-b border-border-soft pb-3 flex items-center gap-2">
                             <i className="fa-solid fa-user-circle text-[var(--color-accent)]"></i> Personal Information
                         </h4>
                         <div className="grid md:grid-cols-2 gap-x-6 gap-y-4">
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Full Name</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Full Name</label>
                                 <input name="fullName" type="text" required className="form-input" placeholder="As on Passport" />
                                 {state?.errors?.fullName && <p className="text-red-500 text-xs mt-1">{state.errors.fullName}</p>}
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Date of Birth</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Date of Birth</label>
                                 <input name="dob" type="date" required className="form-input" />
                                 {state?.errors?.dob && <p className="text-red-500 text-xs mt-1">{state.errors.dob}</p>}
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Passport Number</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Passport Number</label>
                                 <input name="passportNumber" type="text" required className="form-input" placeholder="Enter Passport No." />
                                 {state?.errors?.passportNumber && <p className="text-red-500 text-xs mt-1">{state.errors.passportNumber}</p>}
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Nationality</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Nationality</label>
                                 <input name="nationality" type="text" required className="form-input" placeholder="e.g. Pakistani" />
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Phone (WhatsApp)</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Phone (WhatsApp)</label>
                                 <input name="phone" type="tel" required className="form-input" placeholder="+92 3XX XXXXXXX" />
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Email</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Email</label>
                                 <input name="email" type="email" required className="form-input" placeholder="yourname@email.com" />
                             </div>
                         </div>
@@ -134,12 +134,12 @@ export default function TravelInsuranceForm() {
 
                     {/* Travel Details */}
                     <div className="space-y-6">
-                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-3 flex items-center gap-2">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-text-muted border-b border-border-soft pb-3 flex items-center gap-2">
                             <i className="fa-solid fa-plane-departure text-[var(--color-accent)]"></i> Travel Details
                         </h4>
                         <div className="grid md:grid-cols-2 gap-x-6 gap-y-4">
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Country of Travel</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Country of Travel</label>
                                 <div className="relative">
                                     <input
                                         name="destination"
@@ -154,11 +154,11 @@ export default function TravelInsuranceForm() {
                                     <datalist id="countries-list">
                                         {COUNTRIES.map(c => <option key={c} value={c} />)}
                                     </datalist>
-                                    <i className="fa-solid fa-search absolute right-3 top-4 text-gray-400"></i>
+                                    <i className="fa-solid fa-search absolute right-3 top-4 text-text-muted"></i>
                                 </div>
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Visa Type</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Visa Type</label>
                                 <select
                                     name="visaType"
                                     required
@@ -175,7 +175,7 @@ export default function TravelInsuranceForm() {
                                 </select>
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Travel Start Date</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Travel Start Date</label>
                                 <input
                                     name="startDate"
                                     type="date"
@@ -186,7 +186,7 @@ export default function TravelInsuranceForm() {
                                 />
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Travel End Date</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Travel End Date</label>
                                 <input
                                     name="endDate"
                                     type="date"
@@ -198,9 +198,9 @@ export default function TravelInsuranceForm() {
                             </div>
                         </div>
                         {duration > 0 && (
-                            <div className="bg-[var(--color-accent-light)] text-[var(--color-primary)] p-3 rounded-lg border border-[var(--color-accent)] inline-block mt-4">
+                            <div className="bg-bg-soft text-text-primary p-3 rounded-lg border border-border-soft inline-block mt-4">
                                 <p className="text-sm font-bold flex items-center gap-2">
-                                    <i className="fa-solid fa-calendar-check"></i>
+                                    <i className="fa-solid fa-calendar-check text-[var(--color-accent)]"></i>
                                     Duration: {duration} Days (Auto-calculated)
                                     <input type="hidden" name="duration" value={duration} />
                                 </p>
@@ -210,12 +210,12 @@ export default function TravelInsuranceForm() {
 
                     {/* Insurance Selection */}
                     <div className="space-y-6">
-                        <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 border-b pb-3 flex items-center gap-2">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-text-muted border-b border-border-soft pb-3 flex items-center gap-2">
                             <i className="fa-solid fa-shield-halved text-[var(--color-accent)]"></i> Plan Selection
                         </h4>
 
                         <div className="space-y-3.5">
-                            <label className="block text-sm font-semibold text-gray-700">Plan Type</label>
+                            <label className="block text-sm font-semibold text-text-secondary">Plan Type</label>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {[
                                     { id: 'Individual', label: 'Individual', icon: 'fa-user' },
@@ -236,8 +236,8 @@ export default function TravelInsuranceForm() {
                                         <div className="active-indicator">
                                             <i className="fa-solid fa-check"></i>
                                         </div>
-                                        <i className={`fa-solid ${type.icon} text-lg ${planType === type.id ? 'text-[var(--color-primary)]' : 'text-gray-400'}`}></i>
-                                        <span className={`font-bold ${planType === type.id ? 'text-[var(--color-primary)]' : 'text-slate-700'}`}>{type.label}</span>
+                                        <i className={`fa-solid ${type.icon} text-lg ${planType === type.id ? 'text-[var(--color-accent)]' : 'text-text-muted'}`}></i>
+                                        <span className={`font-bold ${planType === type.id ? 'text-text-primary' : 'text-text-secondary'}`}>{type.label}</span>
                                     </label>
                                 ))}
                             </div>
@@ -245,7 +245,7 @@ export default function TravelInsuranceForm() {
 
                         <div className="space-y-3.5">
                             <div className="flex justify-between items-center">
-                                <label className="block text-sm font-semibold text-gray-700">Coverage Amount</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Coverage Amount</label>
                                 <span className="bg-yellow-100 text-yellow-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">Required for Visa</span>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -269,8 +269,8 @@ export default function TravelInsuranceForm() {
                                         {opt.badge === 'Popular' && (
                                             <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] px-2 py-0.5 rounded-full font-bold z-10">RECOMMENDED</span>
                                         )}
-                                        <div className={`text-xl font-black ${coverage === opt.val ? 'text-[var(--color-primary)]' : 'text-slate-800'}`}>{opt.label}</div>
-                                        <div className={`text-[10px] font-bold ${coverage === opt.val ? 'text-[var(--color-primary)]/60' : 'text-gray-400'}`}>{opt.badge}</div>
+                                        <div className={`text-xl font-black ${coverage === opt.val ? 'text-text-primary' : 'text-text-primary/70'}`}>{opt.label}</div>
+                                        <div className={`text-[10px] font-bold ${coverage === opt.val ? 'text-[var(--color-accent)]' : 'text-text-muted'}`}>{opt.badge}</div>
                                     </label>
                                 ))}
                             </div>
@@ -279,27 +279,27 @@ export default function TravelInsuranceForm() {
                         {/* Travelers Detail Section */}
                         <div className="grid md:grid-cols-2 gap-x-6 gap-y-4 pt-2">
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Number of Travelers</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Number of Travelers</label>
                                 <input name="travelersCount" type="number" min="1" defaultValue="1" className="form-input" />
                             </div>
                             <div className="space-y-1.5">
-                                <label className="block text-sm font-semibold text-gray-700">Age of Traveler(s)</label>
+                                <label className="block text-sm font-semibold text-text-secondary">Age of Traveler(s)</label>
                                 <input name="travelersAges" type="text" className="form-input" placeholder="e.g. 25, 30, 5" />
-                                <p className="text-[10px] text-gray-500">Separated by commas if multiple</p>
+                                <p className="text-[10px] text-text-muted">Separated by commas if multiple</p>
                             </div>
                         </div>
 
                         {/* Conditional Fields */}
                         {planType === 'Student' && (
-                            <div className="p-5 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
-                                <label className="block text-sm font-bold mb-2">University / College Name</label>
+                            <div className="p-5 bg-bg-soft rounded-xl border-l-4 border-[var(--color-accent)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
+                                <label className="block text-sm font-bold mb-2 text-text-primary">University / College Name</label>
                                 <input name="universityName" type="text" className="form-input" placeholder="Enter institution name" />
                             </div>
                         )}
 
                         {planType === 'Multi-Trip' && (
-                            <div className="p-5 bg-gray-50 rounded-xl border-l-4 border-[var(--color-primary)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
-                                <label className="block text-sm font-bold mb-2">Trip Frequency</label>
+                            <div className="p-5 bg-bg-soft rounded-xl border-l-4 border-[var(--color-accent)] animate-in slide-in-from-left duration-300 shadow-sm mt-4">
+                                <label className="block text-sm font-bold mb-2 text-text-primary">Trip Frequency</label>
                                 <select name="multiTripFreq" className="form-select">
                                     <option value="30 Days per trip">30 Days max per trip (Annual Policy)</option>
                                     <option value="60 Days per trip">60 Days max per trip (Annual Policy)</option>
@@ -310,13 +310,13 @@ export default function TravelInsuranceForm() {
 
                         {/* Family Members Dynamic Fields */}
                         {planType === 'Family' && (
-                            <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-5 mt-4">
+                            <div className="bg-bg-soft p-6 rounded-2xl border border-border-soft space-y-5 mt-4">
                                 <div className="flex justify-between items-center">
-                                    <label className="block text-sm font-bold text-gray-800">Family Member Details</label>
-                                    <span className="text-[10px] text-gray-500 font-medium">Add spouse & children under 18</span>
+                                    <label className="block text-sm font-bold text-text-primary">Family Member Details</label>
+                                    <span className="text-[10px] text-text-muted font-medium">Add spouse & children under 18</span>
                                 </div>
                                 {familyMembers.map((member, index) => (
-                                    <div key={index} className="flex gap-3 items-start bg-white p-4 rounded-lg border border-gray-100 shadow-sm animate-in zoom-in-95">
+                                    <div key={index} className="flex gap-3 items-start bg-bg-surface p-4 rounded-lg border border-border-soft shadow-sm animate-in zoom-in-95">
                                         <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <input
                                                 type="text"
@@ -339,7 +339,7 @@ export default function TravelInsuranceForm() {
                                         </button>
                                     </div>
                                 ))}
-                                <button type="button" onClick={addFamilyMember} className="w-full py-3 px-4 border-2 border-dashed border-gray-300 text-gray-500 rounded-xl hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all flex items-center justify-center gap-2 font-semibold min-h-[44px]">
+                                <button type="button" onClick={addFamilyMember} className="w-full py-3 px-4 border-2 border-dashed border-border-soft text-text-muted rounded-xl hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all flex items-center justify-center gap-2 font-semibold min-h-[44px]">
                                     <i className="fa-solid fa-plus"></i> Add Family Member
                                 </button>
                                 <input type="hidden" name="familyMembers" value={JSON.stringify(familyMembers)} />
@@ -370,20 +370,20 @@ export default function TravelInsuranceForm() {
                         <div className="flex items-center justify-center gap-8 mt-6 pb-2">
                             <div className="flex flex-col items-center gap-1.5">
                                 <i className="fa-solid fa-lock text-green-500 text-xs"></i>
-                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Secure</span>
+                                <span className="text-[9px] font-bold text-text-muted uppercase tracking-widest">Secure</span>
                             </div>
                             <div className="flex flex-col items-center gap-1.5">
                                 <i className="fa-solid fa-bolt text-blue-500 text-xs"></i>
-                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Instant</span>
+                                <span className="text-[9px] font-bold text-text-muted uppercase tracking-widest">Instant</span>
                             </div>
                             <div className="flex flex-col items-center gap-1.5">
                                 <i className="fa-solid fa-shield-check text-purple-500 text-xs"></i>
-                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Verified</span>
+                                <span className="text-[9px] font-bold text-text-muted uppercase tracking-widest">Verified</span>
                             </div>
                         </div>
                     </div>
 
-                    <p className="text-[10px] text-center text-gray-400 leading-relaxed px-4">
+                    <p className="text-[10px] text-center text-text-muted leading-relaxed px-4">
                         By clicking "Generate Quote", you agree to be contacted by JF Visa advisors regarding your insurance policy via Email and WhatsApp.
                         <br />No payment is required at this stage.
                     </p>

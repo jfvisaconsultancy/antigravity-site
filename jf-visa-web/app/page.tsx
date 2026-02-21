@@ -3,12 +3,13 @@ import { CONFIG } from "@/lib/config";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import VisaQuiz from "@/components/VisaQuiz";
+import Section from "@/components/Section";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       {/* 1. HERO — TARGETED HOOK */}
-      <section className="relative overflow-hidden bg-[var(--color-primary)] text-white" style={{ padding: '160px 0 110px' }}>
+      <Section variant="contrast" className="relative overflow-hidden" padding="none" style={{ padding: '160px 0 110px' }}>
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-l from-[var(--color-accent)]/20 to-transparent"></div>
         </div>
@@ -20,12 +21,12 @@ export default function Home() {
               <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent)]">Expert Visa Strategy</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 fade-in italic font-heading text-white">
+            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 fade-in italic font-heading text-text-inverse">
               Stop Guessing. <br />
               <span className="text-[var(--color-accent)]">Start Your Journey</span> With Certainty.
             </h1>
 
-            <p className="text-xl text-white/70 mb-10 leading-relaxed fade-in max-w-[620px]">
+            <p className="text-xl text-text-inverse mb-10 leading-relaxed fade-in max-w-[620px]">
               Stop risking your future with general advice. Get a clear, case-based strategy designed to prevent refusals and navigate complex documentation with ease.
             </p>
 
@@ -41,39 +42,39 @@ export default function Home() {
             <div className="mt-12 flex flex-wrap gap-8 fade-in">
               <div className="flex items-center gap-2">
                 <i className="fa-solid fa-check text-[var(--color-accent)]"></i>
-                <span className="text-sm font-semibold text-white/80">Case Based Guidance</span>
+                <span className="text-sm font-semibold text-text-inverse">Case Based Guidance</span>
               </div>
               <div className="flex items-center gap-2">
                 <i className="fa-solid fa-check text-[var(--color-accent)]"></i>
-                <span className="text-sm font-semibold text-white/80">Documentation Preparation</span>
+                <span className="text-sm font-semibold text-text-inverse">Documentation Preparation</span>
               </div>
               <div className="flex items-center gap-2">
                 <i className="fa-solid fa-check text-[var(--color-accent)]"></i>
-                <span className="text-sm font-semibold text-white/80">Refusal Prevention Strategy</span>
+                <span className="text-sm font-semibold text-text-inverse">Refusal Prevention Strategy</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 2. VISITOR PATH SELECTOR */}
-      <section className="section-padding bg-white">
+      <Section variant="surface">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">Tell us your goal</h2>
-            <p className="text-white/60 max-w-[680px] mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-text-primary">Tell us your goal</h2>
+            <p className="text-text-secondary max-w-[680px] mx-auto text-lg">
               Select the path that matches your ambition. Each journey is unique, and our strategy is built entirely around your profile.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link href="/study-visa" className="group">
-              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-[var(--color-off-white)] border border-transparent hover:border-[var(--color-accent)] hover:bg-white hover:shadow-premium transition-all duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
-                  <i className="fa-solid fa-graduation-cap text-3xl text-white"></i>
+              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-bg-base border border-transparent hover:border-[var(--color-accent)] hover:bg-bg-surface hover:shadow-premium transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-bg-contrast flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
+                  <i className="fa-solid fa-graduation-cap text-text-inverse text-3xl"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Study Abroad</h3>
-                <p className="text-white/60 mb-8">Top universities in UK, Canada, Australia, and Europe with full scholarship guidance.</p>
+                <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">Study Abroad</h3>
+                <p className="text-text-secondary mb-8">Top universities in UK, Canada, Australia, and Europe with full scholarship guidance.</p>
                 <span className="text-[var(--color-accent)] font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Start My Strategy <i className="fa-solid fa-arrow-right"></i>
                 </span>
@@ -81,12 +82,12 @@ export default function Home() {
             </Link>
 
             <Link href="/visit-visa" className="group">
-              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-[var(--color-off-white)] border border-transparent hover:border-[var(--color-accent)] hover:bg-white hover:shadow-premium transition-all duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
-                  <i className="fa-solid fa-passport text-3xl text-white"></i>
+              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-bg-base border border-transparent hover:border-[var(--color-accent)] hover:bg-bg-surface hover:shadow-premium transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-bg-contrast flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
+                  <i className="fa-solid fa-passport text-text-inverse text-3xl"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Visit Visa</h3>
-                <p className="text-white/60 mb-8">UK standard visitor, Schengen/Europe, and USA/Canada tourist visa solutions.</p>
+                <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">Visit Visa</h3>
+                <p className="text-text-secondary mb-8">UK standard visitor, Schengen/Europe, and USA/Canada tourist visa solutions.</p>
                 <span className="text-[var(--color-accent)] font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Check Requirements <i className="fa-solid fa-arrow-right"></i>
                 </span>
@@ -94,12 +95,12 @@ export default function Home() {
             </Link>
 
             <Link href="/work-permit" className="group">
-              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-[var(--color-off-white)] border border-transparent hover:border-[var(--color-accent)] hover:bg-white hover:shadow-premium transition-all duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
-                  <i className="fa-solid fa-briefcase text-3xl text-white"></i>
+              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-bg-base border border-transparent hover:border-[var(--color-accent)] hover:bg-bg-surface hover:shadow-premium transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-bg-contrast flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
+                  <i className="fa-solid fa-briefcase text-text-inverse text-3xl"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Work Abroad</h3>
-                <p className="text-white/60 mb-8">Legal work permits and job-seeker visas for Europe, UAE, and Gulf countries.</p>
+                <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">Work Abroad</h3>
+                <p className="text-text-secondary mb-8">Legal work permits and job-seeker visas for Europe, UAE, and Gulf countries.</p>
                 <span className="text-[var(--color-accent)] font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   View Opportunities <i className="fa-solid fa-arrow-right"></i>
                 </span>
@@ -107,12 +108,12 @@ export default function Home() {
             </Link>
 
             <Link href="/immigration" className="group">
-              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-[var(--color-off-white)] border border-transparent hover:border-[var(--color-accent)] hover:bg-white hover:shadow-premium transition-all duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
-                  <i className="fa-solid fa-earth-americas text-3xl text-white"></i>
+              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-bg-base border border-transparent hover:border-[var(--color-accent)] hover:bg-bg-surface hover:shadow-premium transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-bg-contrast flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
+                  <i className="fa-solid fa-earth-americas text-text-inverse text-3xl"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Immigration / PR</h3>
-                <p className="text-white/60 mb-8">Permanent residency pathways for Canada, Australia, and European settled status.</p>
+                <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">Immigration / PR</h3>
+                <p className="text-text-secondary mb-8">Permanent residency pathways for Canada, Australia, and European settled status.</p>
                 <span className="text-[var(--color-accent)] font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Explore Pathways <i className="fa-solid fa-arrow-right"></i>
                 </span>
@@ -120,12 +121,12 @@ export default function Home() {
             </Link>
 
             <Link href="/refusal-case" className="group">
-              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-[var(--color-off-white)] border border-transparent hover:border-[var(--color-accent)] hover:bg-white hover:shadow-premium transition-all duration-500">
+              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-bg-base border border-transparent hover:border-[var(--color-accent)] hover:bg-bg-surface hover:shadow-premium transition-all duration-500">
                 <div className="w-16 h-16 rounded-2xl bg-red-900/10 flex items-center justify-center mb-8 group-hover:bg-red-600 transition-colors">
-                  <i className="fa-solid fa-circle-exclamation text-3xl text-red-600 group-hover:text-white transition-colors"></i>
+                  <i className="fa-solid fa-circle-exclamation text-3xl text-red-600 group-hover:text-text-inverse transition-colors"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Visa Refused</h3>
-                <p className="text-white/60 mb-8">Had a previous refusal? We specialize in recovering and justifying complex refusal cases.</p>
+                <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">Visa Refused</h3>
+                <p className="text-text-secondary mb-8">Had a previous refusal? We specialize in recovering and justifying complex refusal cases.</p>
                 <span className="text-red-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Recover My Case <i className="fa-solid fa-arrow-right"></i>
                 </span>
@@ -133,12 +134,12 @@ export default function Home() {
             </Link>
 
             <Link href="/travel-insurance" className="group">
-              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-[var(--color-off-white)] border border-transparent hover:border-[var(--color-accent)] hover:bg-white hover:shadow-premium transition-all duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
-                  <i className="fa-solid fa-shield-halved text-3xl text-white"></i>
+              <div className="h-full p-10 rounded-[var(--border-radius-lg)] bg-bg-base border border-transparent hover:border-[var(--color-accent)] hover:bg-bg-surface hover:shadow-premium transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-bg-contrast flex items-center justify-center mb-8 group-hover:bg-[var(--color-accent)] transition-colors">
+                  <i className="fa-solid fa-shield-halved text-text-inverse text-3xl"></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-heading">Travel Insurance</h3>
-                <p className="text-white/60 mb-8">Instant, Schengen-compliant travel insurance policies for all visa types and ages.</p>
+                <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">Travel Insurance</h3>
+                <p className="text-text-secondary mb-8">Instant, Schengen-compliant travel insurance policies for all visa types and ages.</p>
                 <span className="text-[var(--color-accent)] font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
                   Get Quick Quote <i className="fa-solid fa-arrow-right"></i>
                 </span>
@@ -146,31 +147,31 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 2.5 INTERACTIVE QUIZ SECTION */}
-      <section className="section-padding bg-[var(--color-primary)]">
+      <Section variant="contrast" padding="section">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="text-white">
-              <div className="inline-block px-4 py-1.5 bg-[var(--color-accent)] text-[var(--color-primary)] text-[10px] font-bold rounded-full mb-8 uppercase tracking-[3px]">
+            <div className="text-text-inverse">
+              <div className="inline-block px-4 py-1.5 bg-[var(--color-accent)] text-bg-contrast text-[10px] font-bold rounded-full mb-8 uppercase tracking-[3px]">
                 Instant Evaluation
               </div>
-              <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight font-heading italic text-white">
+              <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight font-heading italic text-text-inverse">
                 Calculate Your <span className="text-[var(--color-accent)]">Visa Success</span> Probability.
               </h2>
-              <p className="text-xl text-white/60 mb-10 leading-relaxed max-w-[540px]">
+              <p className="text-xl text-text-inverse/80 mb-10 leading-relaxed max-w-[540px]">
                 Answer 4 simple questions about your profile and get an instant score on your chances of approval. This is the first step to a successful application.
               </p>
               <div className="flex items-center gap-6">
                 <div className="flex -space-x-3 overflow-hidden">
                   {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="inline-block h-10 w-10 rounded-full ring-2 ring-[var(--color-primary)] bg-slate-200 flex items-center justify-center text-[10px] font-bold text-[var(--color-primary)]">
+                    <div key={i} className="inline-block h-10 w-10 rounded-full ring-2 ring-bg-contrast bg-slate-200 flex items-center justify-center text-[10px] font-bold text-bg-contrast">
                       {String.fromCharCode(64 + i)}
                     </div>
                   ))}
                 </div>
-                <div className="text-sm font-semibold text-white/40">
+                <div className="text-sm font-semibold text-text-inverse/40">
                   <span className="text-[var(--color-accent)]">2,400+</span> evaluations completed this month
                 </div>
               </div>
@@ -180,15 +181,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 3. PROBLEM IDENTIFICATION SECTION */}
-      <section className="section-padding bg-[var(--color-off-white)]">
+      <Section variant="base">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 font-heading">Why Most Visa Applications Get Rejected</h2>
-              <p className="text-lg text-white/60 mb-8 leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 font-heading text-text-primary">Why Most Visa Applications Get Rejected</h2>
+              <p className="text-lg text-text-secondary mb-8 leading-relaxed">
                 Applying for a visa is more than just filling out forms. Without a strategic approach, even minor errors can lead to a lifetime refusal record.
               </p>
 
@@ -204,8 +205,8 @@ export default function Home() {
                       <i className="fa-solid fa-xmark text-red-600 text-xs"></i>
                     </div>
                     <div>
-                      <h4 className="font-bold text-[var(--color-primary)]">{item.title}</h4>
-                      <p className="text-sm text-white/50">{item.desc}</p>
+                      <h4 className="font-bold text-text-primary">{item.title}</h4>
+                      <p className="text-sm text-text-secondary">{item.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -219,13 +220,13 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-[2rem] overflow-hidden bg-[var(--color-primary)] p-1">
-                <div className="w-full h-full rounded-[1.9rem] bg-[var(--color-primary-light)] flex flex-col items-center justify-center p-12 text-center">
+              <div className="aspect-square rounded-[2rem] overflow-hidden bg-bg-contrast p-1 shadow-2xl">
+                <div className="w-full h-full rounded-[1.9rem] bg-bg-contrast flex flex-col items-center justify-center p-12 text-center border border-white/5">
                   <div className="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center mb-8 border border-white/10">
                     <i className="fa-solid fa-file-circle-exclamation text-4xl text-[var(--color-accent)]"></i>
                   </div>
-                  <h4 className="text-2xl font-bold text-white mb-4">Did You Know?</h4>
-                  <p className="text-white/60 text-lg italic">
+                  <h4 className="text-2xl font-bold text-text-inverse mb-4">Did You Know?</h4>
+                  <p className="text-text-inverse/60 text-lg italic leading-relaxed">
                     "Over 65% of Pakistani visa refusals are due to 'Intent' and 'Financial Sufficiency' — both of which are avoidable with proper trajectory mapping."
                   </p>
                 </div>
@@ -233,14 +234,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 4. AUTHORITY POSITIONING */}
-      <section className="section-padding bg-white">
+      <Section variant="surface">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">How Visa Officers Review Applications</h2>
-            <p className="text-white/60 max-w-[680px] mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-text-primary">How Visa Officers Review Applications</h2>
+            <p className="text-text-secondary max-w-[680px] mx-auto text-lg">
               We reverse-engineer our strategies based on the actual criteria used by entry clearance officers.
             </p>
           </div>
@@ -252,71 +253,71 @@ export default function Home() {
               { title: "Home Ties", desc: "Is there enough proof that the applicant will return to Pakistan?", icon: "fa-house-lock" },
               { title: "Document Credibility", desc: "Are all certificates and supporting letters verifiable?", icon: "fa-shield-check" }
             ].map((factor, idx) => (
-              <div key={idx} className="p-8 rounded-[var(--border-radius-md)] bg-[var(--color-off-white)] border-l-4 border-[var(--color-accent)]">
+              <div key={idx} className="p-8 rounded-[var(--border-radius-md)] bg-bg-base border-l-4 border-[var(--color-accent)] shadow-sm">
                 <i className={`fa-solid ${factor.icon} text-3xl text-[var(--color-accent)] mb-6`}></i>
-                <h4 className="text-xl font-bold mb-3">{factor.title}</h4>
-                <p className="text-white/50 text-sm leading-relaxed">{factor.desc}</p>
+                <h4 className="text-xl font-bold mb-3 text-text-primary">{factor.title}</h4>
+                <p className="text-text-secondary text-sm leading-relaxed">{factor.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 5. PROOF SECTION */}
-      <section className="section-padding bg-[var(--color-primary)] text-white">
+      <Section variant="contrast">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-white italic">Approval Confidence</h2>
-            <p className="text-white/60 max-w-[680px] mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading italic text-text-inverse">Approval Confidence</h2>
+            <p className="text-text-inverse/60 max-w-[680px] mx-auto text-lg">
               Our results speak louder than brochures. We specialize in hard-to-get approvals and refusal recovery.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="p-10 rounded-[var(--border-radius-lg)] bg-white/5 border border-white/10 text-center">
+            <div className="p-10 rounded-[var(--border-radius-lg)] bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
               <div className="text-5xl font-bold text-[var(--color-accent)] mb-4">950+</div>
-              <h4 className="text-xl font-bold uppercase tracking-widest text-white/80">Students Approved</h4>
-              <p className="text-sm text-white/40 mt-4 leading-relaxed">UK, Canada, and Europe study visa success stories.</p>
+              <h4 className="text-xl font-bold uppercase tracking-widest text-text-inverse/80">Students Approved</h4>
+              <p className="text-sm text-text-inverse/40 mt-4 leading-relaxed">UK, Canada, and Europe study visa success stories.</p>
             </div>
-            <div className="p-10 rounded-[var(--border-radius-lg)] bg-white/5 border border-white/10 text-center">
+            <div className="p-10 rounded-[var(--border-radius-lg)] bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
               <div className="text-5xl font-bold text-[var(--color-accent)] mb-4">1,800+</div>
-              <h4 className="text-xl font-bold uppercase tracking-widest text-white/80">Visit Visas Approved</h4>
-              <p className="text-sm text-white/40 mt-4 leading-relaxed">Schengen, USA, and UK tourist visa successes.</p>
+              <h4 className="text-xl font-bold uppercase tracking-widest text-text-inverse/80">Visit Visas Approved</h4>
+              <p className="text-sm text-text-inverse/40 mt-4 leading-relaxed">Schengen, USA, and UK tourist visa successes.</p>
             </div>
-            <div className="p-10 rounded-[var(--border-radius-lg)] bg-white/5 border border-white/10 text-center">
+            <div className="p-10 rounded-[var(--border-radius-lg)] bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
               <div className="text-5xl font-bold text-[var(--color-accent)] mb-4">400+</div>
-              <h4 className="text-xl font-bold uppercase tracking-widest text-white/80">Refusals Recovered</h4>
-              <p className="text-sm text-white/40 mt-4 leading-relaxed">Turning initial rejections into final approvals.</p>
+              <h4 className="text-xl font-bold uppercase tracking-widest text-text-inverse/80">Refusals Recovered</h4>
+              <p className="text-sm text-text-inverse/40 mt-4 leading-relaxed">Turning initial rejections into final approvals.</p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/5">
             <div className="text-center">
-              <div className="text-2xl font-bold mb-1">5,000+</div>
+              <div className="text-2xl font-bold mb-1 text-text-inverse">5,000+</div>
               <div className="text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] font-bold">Files Prepared</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold mb-1">25+</div>
+              <div className="text-2xl font-bold mb-1 text-text-inverse">25+</div>
               <div className="text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] font-bold">Countries Done</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold mb-1">10+</div>
+              <div className="text-2xl font-bold mb-1 text-text-inverse">10+</div>
               <div className="text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] font-bold">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold mb-1">12,000+</div>
+              <div className="text-2xl font-bold mb-1 text-text-inverse">12,000+</div>
               <div className="text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] font-bold">Counseling Hours</div>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 6. PROCESS SIMPLIFICATION */}
-      <section className="section-padding bg-white">
+      <Section variant="surface">
         <div className="container">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">The 4-Step Journey to Approval</h2>
-            <p className="text-white/60 max-w-[680px] mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-text-primary">The 4-Step Journey to Approval</h2>
+            <p className="text-text-secondary max-w-[680px] mx-auto text-lg">
               We make the complex visa process safe, understandable, and predictable.
             </p>
           </div>
@@ -332,25 +333,25 @@ export default function Home() {
                 { title: "Visa Decision Support", desc: "Pre-interview prep and final guidance for successful visa collection.", icon: "fa-plane-arrival" }
               ].map((step, idx) => (
                 <div key={idx} className="text-center group">
-                  <div className="w-20 h-20 rounded-full bg-white border-2 border-[var(--color-accent)] flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-300">
+                  <div className="w-20 h-20 rounded-full bg-bg-surface border-2 border-[var(--color-accent)] flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:bg-[var(--color-accent)] group-hover:text-text-inverse transition-all duration-300">
                     <i className={`fa-solid ${step.icon} text-3xl`}></i>
                   </div>
                   <div className="px-4">
                     <div className="text-xs font-bold text-[var(--color-accent)] mb-2 uppercase tracking-widest">Step 0{idx + 1}</div>
-                    <h4 className="text-xl font-bold mb-4 font-heading">{step.title}</h4>
-                    <p className="text-sm text-white/50 leading-relaxed">{step.desc}</p>
+                    <h4 className="text-xl font-bold mb-4 font-heading text-text-primary">{step.title}</h4>
+                    <p className="text-sm text-text-secondary leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 7. URGENCY BLOCK & 8. FINAL CTA */}
-      <section className="section-padding bg-[var(--color-off-white)] border-t border-slate-200">
+      <Section variant="base" className="border-t border-border-soft">
         <div className="container">
-          <div className="p-12 md:p-20 rounded-[3rem] bg-[var(--color-primary)] text-white relative overflow-hidden shadow-2xl">
+          <div className="p-12 md:p-20 rounded-[3rem] bg-bg-contrast text-text-inverse relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent)] opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
 
@@ -359,11 +360,11 @@ export default function Home() {
                 Time Sensitive
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight font-heading italic text-white">
+              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight font-heading italic text-text-inverse">
                 Get Professional Evaluation <br className="hidden md:block" /> Before Applying.
               </h2>
 
-              <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-text-inverse/80 mb-12 max-w-2xl mx-auto leading-relaxed">
                 Visa rules change frequently. An incorrect first attempt increases your refusal history forever. Start your assessment today for a safe application.
               </p>
 
@@ -373,24 +374,24 @@ export default function Home() {
 
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-12 border-t border-white/5">
                 <a href={`https://wa.me/${CONFIG.whatsapp}`} className="flex items-center gap-4 group">
-                  <div className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white text-3xl group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-text-inverse text-3xl group-hover:scale-110 transition-transform">
                     <i className="fa-brands fa-whatsapp"></i>
                   </div>
                   <div className="text-left">
-                    <div className="text-[10px] uppercase tracking-widest text-white/40">WhatsApp Advisor</div>
-                    <div className="text-xl font-bold">{CONFIG.phone}</div>
+                    <div className="text-[10px] uppercase tracking-widest text-text-inverse/40">WhatsApp Advisor</div>
+                    <div className="text-xl font-bold text-text-inverse">{CONFIG.phone}</div>
                   </div>
                 </a>
                 <div className="hidden md:block w-px h-12 bg-white/10"></div>
                 <div className="text-left">
-                  <div className="text-[10px] uppercase tracking-widest text-white/40 text-center md:text-left">Typical Response Time</div>
+                  <div className="text-[10px] uppercase tracking-widest text-text-inverse/40 text-center md:text-left">Typical Response Time</div>
                   <div className="text-lg font-bold text-[var(--color-accent)]">Within 15 Minutes</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Sticky WhatsApp for Mobile */}
       <a

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { CONFIG } from '@/lib/config';
 import ContactForm from '@/components/ContactForm';
+import Section from '@/components/Section';
 
 export const metadata = {
     title: "Legal Work Permits & Visas | Europe & Gulf Employment Strategy",
@@ -19,18 +20,18 @@ export default function WorkPermitPage() {
     return (
         <main className="min-h-screen">
             {/* 1. HERO — HOOK */}
-            <section className="relative pt-32 pb-20 bg-[var(--color-primary)] text-white overflow-hidden">
+            <Section variant="contrast" padding="none" className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute top-0 right-1/4 w-1/4 h-full bg-[var(--color-accent)] opacity-5 blur-[100px]"></div>
                 <div className="container relative z-10">
                     <div className="max-w-[800px]">
-                        <div className="inline-block px-4 py-1.5 bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-bold rounded-full mb-8 uppercase tracking-widest">
+                        <div className="inline-block px-4 py-1.5 bg-[var(--color-accent)] text-bg-contrast text-xs font-bold rounded-full mb-8 uppercase tracking-widest">
                             Legal Employment Trajectory
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight font-heading italic">
+                        <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight font-heading italic text-text-inverse">
                             Build a Career, <br />
                             <span className="text-[var(--color-accent)]">Not Just a Migration Record.</span>
                         </h1>
-                        <p className="text-xl text-white/70 mb-10 leading-relaxed max-w-[640px]">
+                        <p className="text-xl text-text-inverse/70 mb-10 leading-relaxed max-w-[640px]">
                             Stop risking your life and assets on illegal routes. We provide 100% legal, documented pathways for work permits in Europe and the Gulf with a focus on long-term career growth.
                         </p>
                         <div className="flex flex-wrap gap-5">
@@ -43,15 +44,15 @@ export default function WorkPermitPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* 2. PROBLEMS — THE RISK OF SCAMS */}
-            <section className="section-padding bg-white">
+            <Section variant="surface">
                 <div className="container">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 font-heading">The Dangers of the 'Grey Market'</h2>
-                            <p className="text-lg text-white/50 mb-10">
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 font-heading text-text-primary">The Dangers of the 'Grey Market'</h2>
+                            <p className="text-lg text-text-secondary mb-10">
                                 Every year, thousands of Pakistani workers lose their savings to fraudulent agents and illegal travel routes. A single fake document can ban you from Europe for life.
                             </p>
 
@@ -61,19 +62,19 @@ export default function WorkPermitPage() {
                                     { title: "Illegal Routes", desc: "Dangerous, undocumented travel that puts your life and legal record at risk." },
                                     { title: "Drafty Documentation", desc: "Using forged certificates or bank statements that visa officers flag instantly." }
                                 ].map((problem, i) => (
-                                    <div key={i} className="flex gap-4 p-6 rounded-2xl bg-red-50 border-l-4 border-red-600">
+                                    <div key={i} className="flex gap-4 p-6 rounded-2xl bg-bg-base border-l-4 border-red-600">
                                         <i className="fa-solid fa-shield-virus text-red-600 mt-1"></i>
                                         <div>
-                                            <h4 className="font-bold text-[var(--color-primary)] mb-1">{problem.title}</h4>
-                                            <p className="text-sm text-red-900/60">{problem.desc}</p>
+                                            <h4 className="font-bold text-text-primary mb-1">{problem.title}</h4>
+                                            <p className="text-sm text-text-secondary">{problem.desc}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="bg-[var(--color-primary)] p-12 rounded-[2rem] text-white">
+                        <div className="bg-bg-contrast p-12 rounded-[2rem] text-text-inverse shadow-2xl">
                             <h3 className="text-2xl font-bold mb-6 text-[var(--color-accent)]">The 100% Legal Path</h3>
-                            <p className="mb-8 text-white/70 italic">
+                            <p className="mb-8 text-text-inverse/70 italic">
                                 "Our mission is to provide Pakistani talent with legitimate access to global labor markets. We only process verified employer-backed permits."
                             </p>
                             <ul className="space-y-5">
@@ -97,14 +98,14 @@ export default function WorkPermitPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* 3. DESTINATION SELECTOR */}
-            <section className="section-padding bg-[var(--color-off-white)]" id="selector">
+            <Section variant="soft" id="selector">
                 <div className="container">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">Targeted Work Opportunities</h2>
-                        <p className="text-white/60 max-w-[680px] mx-auto text-lg leading-relaxed">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-text-primary">Targeted Work Opportunities</h2>
+                        <p className="text-text-secondary max-w-[680px] mx-auto text-lg leading-relaxed">
                             We match your skills with the countries that demand them most.
                         </p>
                     </div>
@@ -112,11 +113,11 @@ export default function WorkPermitPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {countries.map((country, idx) => (
                             <Link key={idx} href={`/work-permit/${country.id}`} className="group">
-                                <div className="h-full p-10 bg-white rounded-2xl border border-transparent hover:border-[var(--color-accent)] hover:shadow-premium transition-all duration-300">
+                                <div className="h-full p-10 bg-bg-surface rounded-2xl border border-border-soft hover:border-[var(--color-accent)] hover:shadow-premium transition-all duration-300">
                                     <div className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-widest mb-4">Work Permit</div>
-                                    <h3 className="text-2xl font-bold mb-4 font-heading">{country.name}</h3>
-                                    <p className="text-white/60 mb-8 text-sm leading-relaxed">{country.desc}</p>
-                                    <span className="text-[var(--color-primary)] font-bold flex items-center gap-2 group-hover:text-[var(--color-accent)] transition-colors text-sm uppercase tracking-widest">
+                                    <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">{country.name}</h3>
+                                    <p className="text-text-secondary mb-8 text-sm leading-relaxed">{country.desc}</p>
+                                    <span className="text-text-primary font-bold flex items-center gap-2 group-hover:text-[var(--color-accent)] transition-colors text-sm uppercase tracking-widest">
                                         View Permit Process <i className="fa-solid fa-arrow-right"></i>
                                     </span>
                                 </div>
@@ -124,14 +125,14 @@ export default function WorkPermitPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* 4. PROOF / CONFIDENCE */}
-            <section className="section-padding bg-white">
+            <Section variant="surface">
                 <div className="container">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">Recent Work Permit Approvals</h2>
-                        <p className="text-white/60 max-w-[680px] mx-auto text-lg">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-text-primary">Recent Work Permit Approvals</h2>
+                        <p className="text-text-secondary max-w-[680px] mx-auto text-lg">
                             We have a proven track record of placing professionals and technicians in global roles.
                         </p>
                     </div>
@@ -142,12 +143,12 @@ export default function WorkPermitPage() {
                             { role: "Logistics Specialist", dest: "Poland (EU)", status: "Visa Issued" },
                             { role: "Skilled Technician", dest: "UAE (Gulf)", status: "Visa Issued" }
                         ].map((proof, i) => (
-                            <div key={i} className="p-10 rounded-2xl bg-[var(--color-off-white)] border border-slate-100 text-center">
-                                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                            <div key={i} className="p-10 rounded-2xl bg-bg-base border border-border-soft text-center">
+                                <div className="w-16 h-16 bg-bg-surface rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
                                     <i className="fa-solid fa-briefcase text-[var(--color-accent)] text-2xl"></i>
                                 </div>
-                                <h4 className="text-xl font-bold mb-2">{proof.role}</h4>
-                                <div className="text-sm text-white/50 mb-4">{proof.dest}</div>
+                                <h4 className="text-xl font-bold mb-2 text-text-primary">{proof.role}</h4>
+                                <div className="text-sm text-text-muted mb-4">{proof.dest}</div>
                                 <div className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-full uppercase tracking-widest">
                                     {proof.status}
                                 </div>
@@ -155,28 +156,28 @@ export default function WorkPermitPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* 5. FINAL CTA FUNNEL */}
-            <section className="section-padding bg-[var(--color-primary)] text-white relative" id="assessment">
+            <Section variant="contrast" id="assessment">
                 <div className="container relative z-10">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight font-heading italic">
+                            <h2 className="text-4xl lg:text-5xl font-black text-text-inverse mb-6 leading-tight font-heading italic">
                                 Secure Your Global <br />
                                 <span className="text-[var(--color-accent)]">Career Path Today.</span>
                             </h2>
-                            <p className="text-xl text-white/70 mb-10 leading-relaxed">
+                            <p className="text-xl text-text-inverse/70 mb-10 leading-relaxed">
                                 Don't wait until work opportunities disappear. Get your profile evaluated today to see which legal work permits match your experience.
                             </p>
                             <div className="flex flex-col gap-6">
                                 <a href={`https://wa.me/${CONFIG.whatsapp}`} className="flex items-center gap-6 group">
-                                    <div className="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center text-white text-3xl group-hover:scale-110 transition-all">
+                                    <div className="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center text-text-inverse text-3xl group-hover:scale-110 transition-all">
                                         <i className="fa-brands fa-whatsapp"></i>
                                     </div>
                                     <div>
-                                        <div className="text-white/40 text-xs font-bold uppercase tracking-widest">Connect with Work Expert</div>
-                                        <div className="text-2xl font-bold">{CONFIG.phone}</div>
+                                        <div className="text-text-inverse/40 text-xs font-bold uppercase tracking-widest">Connect with Work Expert</div>
+                                        <div className="text-2xl font-bold text-text-inverse">{CONFIG.phone}</div>
                                     </div>
                                 </a>
                                 <div className="inline-flex items-center gap-3 text-sm text-[var(--color-accent)] font-semibold border border-[var(--color-accent)]/20 px-6 py-4 rounded-xl">
@@ -185,12 +186,12 @@ export default function WorkPermitPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-white p-2 rounded-[2.5rem] shadow-2xl">
+                        <div className="bg-bg-surface p-2 rounded-[2.5rem] shadow-2xl">
                             <ContactForm title="Check Work Eligibility" />
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
         </main>
     );
 }

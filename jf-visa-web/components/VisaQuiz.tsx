@@ -74,34 +74,34 @@ export default function VisaQuiz() {
     if (showResults) {
         const rec = getRecommendation();
         return (
-            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 animate-in zoom-in-95 duration-500">
+            <div className="bg-bg-surface p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-border-soft animate-in zoom-in-95 duration-500">
                 <div className="text-center mb-8">
-                    <div className="inline-block px-4 py-1 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">Your Evaluation Result</div>
-                    <h3 className={`text-3xl font-black mb-4 ${rec.color} font-heading`}>{rec.title}</h3>
-                    <p className="text-white/60 text-lg leading-relaxed">{rec.desc}</p>
+                    <div className="inline-block px-4 py-1 bg-bg-soft rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 text-text-secondary">Your Evaluation Result</div>
+                    <h3 className={`text-3xl font-black mb-4 ${rec.color} font-heading italic`}>{rec.title}</h3>
+                    <p className="text-text-secondary text-lg leading-relaxed">{rec.desc}</p>
                 </div>
 
-                <div className="p-8 bg-slate-50 rounded-2xl border border-dashed border-slate-200 mb-8">
+                <div className="p-8 bg-bg-base rounded-2xl border border-dashed border-border-soft mb-8">
                     <div className="flex justify-between items-center mb-4">
-                        <span className="font-bold text-slate-800">Profile Match Score</span>
+                        <span className="font-bold text-text-primary">Profile Match Score</span>
                         <span className={`text-2xl font-black ${rec.color}`}>{Math.round((score / 45) * 100)}%</span>
                     </div>
-                    <div className="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="w-full h-3 bg-bg-soft rounded-full overflow-hidden">
                         <div className={`h-full transition-all duration-1000 ${score >= 35 ? 'bg-green-500' : score >= 25 ? 'bg-amber-500' : 'bg-red-500'}`} style={{ width: `${(score / 45) * 100}%` }}></div>
                     </div>
                 </div>
 
                 <div className="space-y-6">
                     <div className="text-center">
-                        <h4 className="text-xl font-bold mb-4">Get Your Full Detailed Report</h4>
-                        <p className="text-sm text-white/50 mb-8">Enter your details below to receive a personalized strategy call from our senior advisor.</p>
+                        <h4 className="text-xl font-bold mb-4 text-text-primary">Get Your Full Detailed Report</h4>
+                        <p className="text-sm text-text-muted mb-8">Enter your details below to receive a personalized strategy call from our senior advisor.</p>
                     </div>
                     <ContactForm title="Get Detailed Strategy" />
                 </div>
 
                 <button
                     onClick={() => { setStep(0); setScore(0); setShowResults(false); }}
-                    className="mt-8 text-xs font-bold text-slate-400 hover:text-[var(--color-primary)] transition-colors uppercase tracking-widest block mx-auto"
+                    className="mt-8 text-xs font-bold text-text-muted hover:text-[var(--color-primary)] transition-colors uppercase tracking-widest block mx-auto"
                 >
                     Retake Quiz
                 </button>
@@ -110,18 +110,18 @@ export default function VisaQuiz() {
     }
 
     return (
-        <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 min-h-[500px] flex flex-col justify-center animate-in fade-in duration-500">
+        <div className="bg-bg-surface p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-border-soft min-h-[500px] flex flex-col justify-center animate-in fade-in duration-500">
             <div className="mb-12">
                 <div className="flex justify-between items-end mb-4">
                     <span className="text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest">Question {step + 1} of {QUESTIONS.length}</span>
-                    <span className="text-xs font-bold text-slate-300">{Math.round(((step + 1) / QUESTIONS.length) * 100)}% Complete</span>
+                    <span className="text-xs font-bold text-text-muted">{Math.round(((step + 1) / QUESTIONS.length) * 100)}% Complete</span>
                 </div>
-                <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                <div className="w-full h-1.5 bg-bg-soft rounded-full overflow-hidden">
                     <div className="h-full bg-[var(--color-accent)] transition-all duration-500" style={{ width: `${((step + 1) / QUESTIONS.length) * 100}%` }}></div>
                 </div>
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-10 font-heading leading-tight italic">
+            <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-10 font-heading leading-tight italic">
                 {QUESTIONS[step].text}
             </h3>
 
@@ -130,15 +130,15 @@ export default function VisaQuiz() {
                     <button
                         key={i}
                         onClick={() => handleOption(opt.points)}
-                        className="p-6 text-left rounded-2xl border-2 border-slate-100 hover:border-[var(--color-accent)] hover:bg-slate-50 transition-all duration-300 font-bold group flex justify-between items-center"
+                        className="p-6 text-left rounded-2xl border-2 border-border-soft hover:border-[var(--color-accent)] hover:bg-bg-soft transition-all duration-300 font-bold group flex justify-between items-center text-text-primary"
                     >
                         <span>{opt.text}</span>
-                        <i className="fa-solid fa-arrow-right text-slate-200 group-hover:text-[var(--color-accent)] group-hover:translate-x-1 transition-all"></i>
+                        <i className="fa-solid fa-arrow-right text-text-muted group-hover:text-[var(--color-accent)] group-hover:translate-x-1 transition-all"></i>
                     </button>
                 ))}
             </div>
 
-            <div className="mt-12 flex items-center gap-4 text-slate-400 text-xs italic">
+            <div className="mt-12 flex items-center gap-4 text-text-muted text-xs italic">
                 <i className="fa-solid fa-shield-halved"></i>
                 <span>Your answers are private and used ONLY for evaluation.</span>
             </div>

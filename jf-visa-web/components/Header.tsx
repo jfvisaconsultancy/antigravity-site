@@ -24,7 +24,7 @@ export default function Header() {
                         style={{ height: '55px', width: 'auto' }}
                         className="logo-img"
                     />
-                    <span className="logo-text" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-primary)', lineHeight: '1.2' }}>
+                    <span className="logo-text" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-primary)', lineHeight: '1.2' }}>
                         JF Visa <span style={{ color: 'var(--color-accent)' }}>Consultancy</span>
                     </span>
                 </Link>

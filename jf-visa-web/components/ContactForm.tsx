@@ -28,9 +28,9 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
     const isVisaSelected = visaOptions.includes(selectedInterest)
 
     return (
-        <div className="contact-form bg-white p-8 rounded-2xl shadow-premium border border-[var(--color-border)] h-fit">
-            <h3 className="text-primary text-2xl font-bold mb-2 font-heading">{title}</h3>
-            <p className="text-[var(--color-text-light)] mb-8 text-sm">Fill in your details for a professional profile evaluation.</p>
+        <div className="contact-form bg-bg-surface p-8 rounded-2xl shadow-premium border border-border-soft h-fit">
+            <h3 className="text-text-primary text-2xl font-bold mb-2 font-heading">{title}</h3>
+            <p className="text-text-secondary mb-8 text-sm">Fill in your details for a professional profile evaluation.</p>
 
             {state?.message && (
                 <div className={`p-4 mb-8 rounded-lg border ${state.success ? 'bg-green-50 border-green-200 text-green-700' : 'bg-red-50 border-red-200 text-red-700'}`}>
@@ -49,7 +49,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
 
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="fullName">Full Name</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="fullName">Full Name</label>
                         <input
                             type="text"
                             id="fullName"
@@ -62,7 +62,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                     </div>
 
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="phone">Phone Number</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="phone">Phone Number</label>
                         <input
                             type="tel"
                             id="phone"
@@ -76,21 +76,21 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                 </div>
 
                 <div className="form-group">
-                    <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="email">Email Address</label>
+                    <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="email">Email Address</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="john@example.com"
                         required
-                        className="w-full p-3 bg-[var(--color-off-white)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-all outline-none"
+                        className="form-input"
                     />
                     {state?.errors?.email && <p className="text-red-500 text-xs mt-1">{state.errors.email}</p>}
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="interest">Service Interested</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="interest">Service Interested</label>
                         <select
                             id="interest"
                             name="interest"
@@ -117,7 +117,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                     </div>
 
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="country">Destination</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="country">Destination</label>
                         <input
                             type="text"
                             id="country"
@@ -130,7 +130,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
 
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="educationLevel">Education Level</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="educationLevel">Education Level</label>
                         <select
                             id="educationLevel"
                             name="educationLevel"
@@ -147,7 +147,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                     </div>
 
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="travelHistory">Travel History</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="travelHistory">Travel History</label>
                         <select
                             id="travelHistory"
                             name="travelHistory"
@@ -164,7 +164,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
 
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="passportStatus">Passport Status</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="passportStatus">Passport Status</label>
                         <select
                             id="passportStatus"
                             name="passportStatus"
@@ -179,7 +179,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                     </div>
 
                     <div className="form-group">
-                        <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="urgency">Urgency</label>
+                        <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="urgency">Urgency</label>
                         <select
                             id="urgency"
                             name="urgency"
@@ -194,7 +194,7 @@ export default function ContactForm({ title = "Send us a message" }: { title?: s
                 </div>
 
                 <div className="form-group">
-                    <label className="block mb-1.5 text-sm font-semibold text-[var(--color-primary)]" htmlFor="message">Message / Additional Info</label>
+                    <label className="block mb-1.5 text-sm font-semibold text-text-primary" htmlFor="message">Message / Additional Info</label>
                     <textarea
                         id="message"
                         name="message"

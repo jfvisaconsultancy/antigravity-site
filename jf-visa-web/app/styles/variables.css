@@ -16,6 +16,29 @@
     --color-accent-tint: rgba(196, 155, 70, 0.1);
     --color-primary-tint: rgba(10, 25, 47, 0.05);
 
+    /* Semantic Color System */
+    --text-primary: #1a1a1a;
+    /* High contrast dark text */
+    --text-secondary: #4b5563;
+    /* Supportive dark-ish text */
+    --text-muted: #6b7280;
+    /* Clear but softer text */
+    --text-inverse: #ffffff;
+    /* Light text on dark background */
+
+    --bg-base: #f8f9fa;
+    /* Main page background */
+    --bg-surface: #ffffff;
+    /* Card/surface background */
+    --bg-soft: #f1f5f9;
+    /* Subtle section background */
+    --bg-contrast: #0a192f;
+    /* Dark section background */
+
+    --border-soft: #e2e8f0;
+    --border-focus: #c49b46;
+    --border-active: #d4af57;
+
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -61,10 +84,12 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--color-off-white);
-    color: var(--color-text-dark);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -74,8 +99,10 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    color: var(--color-primary);
+    color: inherit;
+    /* Allow section-level coloring to flow down */
     line-height: 1.2;
+    font-weight: 700;
 }
 
 h1 {
@@ -93,7 +120,8 @@ h3 {
 p {
     margin-bottom: 12px;
     line-height: 1.6;
-    /* 1.6 is approx 14-18px leading equivalent for standard text */
+    color: inherit;
+    /* High contrast, inherits from parent section color */
 }
 
 img {
@@ -134,7 +162,7 @@ ul {
 
 .btn-primary {
     background-color: var(--color-accent);
-    color: var(--color-primary);
+    color: var(--bg-contrast);
 }
 
 .btn-primary:hover {
@@ -145,8 +173,8 @@ ul {
 
 .btn-outline {
     background-color: transparent;
-    border-color: var(--color-white);
-    color: var(--color-white);
+    border-color: currentColor;
+    color: inherit;
 }
 
 .btn-outline:hover {
