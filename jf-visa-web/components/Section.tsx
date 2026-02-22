@@ -35,10 +35,12 @@ const Section: React.FC<SectionProps> = ({
     return (
         <section
             id={id}
-            className={`${bgClasses[variant]} ${paddingClasses[padding]} ${className}`}
+            className={`${bgClasses[variant]} ${paddingClasses[padding]} ${className} overflow-hidden`}
             style={style}
         >
-            {children}
+            <div className="container mx-auto lg:max-w-7xl">
+                {children}
+            </div>
         </section>
     );
 };

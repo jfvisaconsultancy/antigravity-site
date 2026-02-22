@@ -21,16 +21,16 @@ export default function StudyVisaPage() {
     return (
         <main className="min-h-screen">
             {/* 1. HERO — HOOK */}
-            <Section variant="contrast" padding="none" className="relative pt-32 pb-20 overflow-hidden">
+            <Section variant="contrast" padding="none" className="relative lg:min-h-[75vh] flex items-center overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-accent)] opacity-5 blur-[120px]"></div>
-                <div className="container relative z-10">
-                    <div className="max-w-[800px]">
-                        <div className="inline-block px-4 py-1.5 bg-[var(--color-accent)] text-bg-contrast text-xs font-bold rounded-full mb-8 uppercase tracking-widest">
+                <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center w-full py-20 lg:py-0">
+                    <div className="fade-in">
+                        <div className="inline-block px-4 py-1.5 bg-[var(--color-accent)] text-bg-contrast text-[10px] font-bold rounded-full mb-8 uppercase tracking-[3px]">
                             Academic Trajectory & Visa Strategy
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight font-heading italic text-text-inverse">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight font-heading italic text-text-inverse">
                             Your Degree is Global. <br />
-                            <span className="text-[var(--color-accent)]">Your Strategy Should Be Professional.</span>
+                            <span className="text-[var(--color-accent)]">Your Strategy Strategic.</span>
                         </h1>
                         <p className="text-xl text-text-inverse/70 mb-10 leading-relaxed max-w-[640px]">
                             98% of our students get admission and visa approval by following our profile-first strategy. We don't just file applications; we build academic careers.
@@ -40,8 +40,25 @@ export default function StudyVisaPage() {
                                 View Destinations
                             </Link>
                             <a href={`https://wa.me/${CONFIG.whatsapp}`} className="btn btn-outline lg:px-10">
-                                Talk to Academic Counselor
+                                Talk to Counselor
                             </a>
+                        </div>
+                    </div>
+
+                    <div className="hidden lg:block">
+                        <div className="p-10 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden">
+                            <div className="absolute -top-20 -left-20 w-48 h-48 bg-[var(--color-accent)] opacity-10 rounded-full blur-3xl"></div>
+                            <h3 className="text-2xl font-bold mb-8 text-[var(--color-accent)]">Admission Success</h3>
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                                    <div className="text-2xl font-bold text-[var(--color-accent)]">98%</div>
+                                    <div className="text-xs text-text-inverse/60 uppercase tracking-widest font-bold">Visa Success Rate</div>
+                                </div>
+                                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                                    <div className="text-2xl font-bold text-[var(--color-accent)]">100%</div>
+                                    <div className="text-xs text-text-inverse/60 uppercase tracking-widest font-bold">Offer Letter Guarantee*</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,81 +66,76 @@ export default function StudyVisaPage() {
 
             {/* 2. PROBLEMS — WHY APPLICATIONS FAIL */}
             <Section variant="surface">
-                <div className="container">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 font-heading text-text-primary">Why Most Student Visas Get Refused</h2>
-                            <p className="text-lg text-text-secondary mb-10">
-                                Pakistan has one of the highest study visa refusal rates. Most errors come from lack of trajectory logic, not lack of academic merit.
-                            </p>
+                <div className="grid lg:grid-cols-12 lg:gap-16 items-center">
+                    <div className="lg:col-span-6">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-heading text-text-primary leading-tight">Why Most Student Visas Get Refused</h2>
+                        <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-[540px]">
+                            Pakistan has one of the highest study visa refusal rates. Most errors come from lack of trajectory logic, not lack of academic merit.
+                        </p>
 
-                            <div className="space-y-8">
-                                {[
-                                    { title: "Generic SOPs", desc: "Copy-pasted Statements of Purpose that fail to justify 'Why this course' or 'Why this country' specifically for your profile." },
-                                    { title: "Financial Inconsistency", desc: "Funds not aligned with the embassy's logic of spending power and family ties." },
-                                    { title: "Wrong Course Choice", desc: "Selecting courses that don't logically follow your previous education or future goals." }
-                                ].map((problem, i) => (
-                                    <div key={i} className="flex gap-4 p-6 rounded-2xl bg-bg-base border-l-4 border-red-500">
-                                        <i className="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
-                                        <div>
-                                            <h4 className="font-bold text-text-primary mb-1">{problem.title}</h4>
-                                            <p className="text-sm text-text-secondary">{problem.desc}</p>
-                                        </div>
+                        <div className="grid grid-cols-1 gap-6">
+                            {[
+                                { title: "Generic SOPs", desc: "Copy-pasted SOPs that fail to justify 'Why this course' or 'Why this country' specifically for you." },
+                                { title: "Financial Inconsistency", desc: "Funds not aligned with the embassy's logic of spending power and ties." },
+                                { title: "Wrong Course Choice", desc: "Selecting courses that don't logically follow your previous education or future goals." }
+                            ].map((problem, i) => (
+                                <div key={i} className="flex gap-4 p-5 rounded-2xl bg-bg-base border-l-4 border-red-500 shadow-sm">
+                                    <i className="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                                    <div>
+                                        <h4 className="font-bold text-text-primary mb-1 text-sm">{problem.title}</h4>
+                                        <p className="text-[10px] text-text-secondary">{problem.desc}</p>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
                         </div>
-                        <div className="bg-bg-contrast p-12 rounded-[2rem] text-text-inverse shadow-2xl">
-                            <h3 className="text-2xl font-bold mb-6 text-[var(--color-accent)]">The JF Difference</h3>
-                            <p className="mb-8 text-text-inverse/70 italic">
-                                "We treat your admission as a business case. We justify why the embassy should grant you a visa based on return logic and career growth."
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-center gap-3">
+                    </div>
+                    <div className="lg:col-span-6 bg-bg-contrast p-10 lg:p-16 rounded-[3rem] text-text-inverse shadow-2xl relative overflow-hidden group">
+                        <h3 className="text-3xl font-bold mb-6 text-[var(--color-accent)] relative z-10 font-heading italic">The JF Strategy</h3>
+                        <p className="mb-8 text-text-inverse/70 italic text-lg leading-relaxed relative z-10">
+                            "We treat your admission as a financial and career roadmap, not just a document filing process."
+                        </p>
+                        <ul className="space-y-4 relative z-10">
+                            {[
+                                "Profile-Based University Selection",
+                                "Professional SOP Writing Support",
+                                "CAS/i20/COE Interview Preparation",
+                                "Financial Documentation Guidance"
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-center gap-4 text-base">
                                     <i className="fa-solid fa-circle-check text-[var(--color-accent)]"></i>
-                                    <span>Profile-Based University Selection</span>
+                                    <span>{item}</span>
                                 </li>
-                                <li className="flex items-center gap-3">
-                                    <i className="fa-solid fa-circle-check text-[var(--color-accent)]"></i>
-                                    <span>Professional SOP Writing Support</span>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <i className="fa-solid fa-circle-check text-[var(--color-accent)]"></i>
-                                    <span>CAS/i20/COE Interview Preparation</span>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <i className="fa-solid fa-circle-check text-[var(--color-accent)]"></i>
-                                    <span>Financial Documentation Guidance</span>
-                                </li>
-                            </ul>
-                        </div>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </Section>
 
             {/* 3. DESTINATION SELECTOR */}
             <Section variant="soft" id="selector">
-                <div className="container">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading text-text-primary">Choose Your Destination</h2>
-                        <p className="text-text-secondary max-w-[680px] mx-auto text-lg leading-relaxed">
+                <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
+                    <div className="lg:col-span-4 lg:sticky lg:top-32 mb-12 lg:mb-0 text-center lg:text-left">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading text-text-primary leading-tight">Map Your Academic Journey</h2>
+                        <p className="text-text-secondary max-w-[600px] mx-auto lg:mx-0 text-lg leading-relaxed">
                             We bridge your background with world-class education hubs. Explore our top-tier study pathways.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {countries.map((country, idx) => (
-                            <Link key={idx} href={`/study-visa/${country.id}`} className="group">
-                                <div className="h-full p-10 bg-bg-surface rounded-2xl border border-border-soft hover:border-[var(--color-accent)] hover:shadow-premium transition-all duration-300">
-                                    <div className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-widest mb-4">Study in</div>
-                                    <h3 className="text-2xl font-bold mb-4 font-heading text-text-primary">{country.name}</h3>
-                                    <p className="text-text-secondary mb-8 text-sm leading-relaxed">{country.desc}</p>
-                                    <span className="text-text-primary font-bold flex items-center gap-2 group-hover:text-[var(--color-accent)] transition-colors text-sm">
-                                        View Admission Requirements <i className="fa-solid fa-arrow-right"></i>
-                                    </span>
-                                </div>
-                            </Link>
-                        ))}
+                    <div className="lg:col-span-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {countries.map((country, idx) => (
+                                <Link key={idx} href={`/study-visa/${country.id}`} className="group">
+                                    <div className="h-full p-8 bg-bg-surface rounded-2xl border border-border-soft hover:border-[var(--color-accent)] hover:shadow-premium transition-all duration-300">
+                                        <div className="text-[var(--color-accent)] text-[10px] font-bold uppercase tracking-[3px] mb-4">Study in</div>
+                                        <h3 className="text-xl font-bold mb-4 font-heading text-text-primary">{country.name}</h3>
+                                        <p className="text-text-secondary mb-8 text-xs leading-relaxed">{country.desc}</p>
+                                        <span className="text-text-primary font-bold flex items-center gap-2 group-hover:text-[var(--color-accent)] transition-colors text-[10px] uppercase tracking-widest">
+                                            View Requirements <i className="fa-solid fa-arrow-right"></i>
+                                        </span>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </Section>

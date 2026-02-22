@@ -14,7 +14,7 @@ export default function ServiceCard({ id, image, title, description, linkHash, h
 
     return (
         <article
-            className="group flex flex-col bg-bg-base rounded-[2.5rem] overflow-hidden border border-border-soft shadow-premium hover:border-[var(--color-accent)] hover:-translate-y-2 transition-all duration-500"
+            className="group flex flex-col bg-bg-base rounded-[2.5rem] overflow-hidden border border-border-soft shadow-premium hover:border-[var(--color-accent)] lg:hover:shadow-2xl lg:hover:-translate-y-3 transition-all duration-500"
             id={id}
         >
             <div className="relative h-[240px] w-full overflow-hidden">

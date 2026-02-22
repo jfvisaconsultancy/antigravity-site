@@ -6,7 +6,7 @@ import MobileNavbar from './navigation/MobileNavbar';
 
 export default function Header() {
     return (
-        <header className="header sticky top-0 z-[1000] bg-white shadow-sm py-4">
+        <header className="header sticky top-0 z-[1000] bg-white shadow-sm lg:shadow-none lg:border-b lg:border-gray-50 py-4">
             <div className="container mx-auto px-4 flex justify-between items-center bg-white">
                 {/* Logo Section - Shared but simplified */}
                 <Link href="/" className="logo flex items-center gap-2">
