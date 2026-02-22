@@ -4,6 +4,8 @@ import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css"; // Import FontAwesome
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileStickyCTA from "@/components/MobileStickyCTA";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 // Configure fonts
 const inter = Inter({
@@ -76,8 +78,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Header />
-        <main>{children}</main>
+        <main className="max-lg:pb-24">{children}</main>
         <Footer />
+        <MobileStickyCTA />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

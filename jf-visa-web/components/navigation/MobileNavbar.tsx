@@ -31,12 +31,6 @@ export default function MobileNavbar() {
         <div className="mobile-navbar lg:hidden">
             {/* Mobile Header elements that trigger the menu */}
             <div className="flex items-center gap-4">
-                <Link
-                    href="/contact"
-                    className="btn btn-primary px-4 py-2 text-[10px] font-black rounded-full shadow-lg"
-                >
-                    ASSESSMENT
-                </Link>
                 <button
                     className="nav-toggle-btn"
                     onClick={toggleMenu}
