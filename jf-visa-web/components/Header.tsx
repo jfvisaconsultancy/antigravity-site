@@ -13,13 +13,13 @@ export default function Header() {
                     <img
                         src="/images/logo.png"
                         alt="JF Visa Consultancy"
-                        className="h-10 md:h-12 w-auto"
+                        className="h-12 w-auto"
                     />
                     <div className="flex flex-col leading-tight">
-                        <span className="text-lg md:text-xl font-black text-text-primary font-heading">
+                        <span className="text-xl font-black text-text-primary font-heading">
                             JF Visa
                         </span>
-                        <span className="text-[10px] md:text-xs font-black text-[var(--color-accent)] uppercase tracking-widest -mt-1">
+                        <span className="text-xs font-black text-[var(--color-accent)] uppercase tracking-widest -mt-1">
                             Consultancy
                         </span>
                     </div>
