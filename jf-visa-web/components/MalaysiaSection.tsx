@@ -117,7 +117,7 @@ export default function MalaysiaSection() {
                         <div className="relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-90"></div>
                             <Image 
-                                src="/images/malaysia-study.jpg" 
+                                src="/images/malaysia-study.png" 
                                 alt="Study in Malaysia – JF Visa Consultancy" 
                                 fill 
                                 className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
