@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { CONFIG } from '@/lib/config';
 import ContactForm from '@/components/ContactForm';
 import Section from '@/components/Section';
+import MalaysiaSection from '@/components/MalaysiaSection';
+
 
 export const metadata = {
     title: "Study Abroad Strategy | High-Success Admission & Visa Guidance",
@@ -110,6 +112,9 @@ export default function StudyVisaPage() {
                     </div>
                 </div>
             </Section>
+
+            {/* NEW: MALAYSIA STUDY SECTION */}
+            <MalaysiaSection />
 
             {/* 3. DESTINATION SELECTOR */}
             <Section variant="soft" id="selector">
